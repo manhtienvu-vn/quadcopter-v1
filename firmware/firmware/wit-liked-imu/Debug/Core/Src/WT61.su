@@ -1,0 +1,10 @@
+../Core/Src/WT61.c:23:6:WT61_Init	16	static
+../Core/Src/WT61.c:29:6:WT61_ResetAngle	8	static
+../Core/Src/WT61.c:35:6:WT61_ReceiveDataPacket	8	static
+../Core/Src/WT61.c:39:6:WT61_CheckProtocolHeader	8	static
+../Core/Src/WT61.c:50:6:WT61_CheckDataField	4	static
+../Core/Src/WT61.c:59:8:WT61_GetPitchAngle	4	static
+../Core/Src/WT61.c:63:8:WT61_GetRollAngle	4	static
+../Core/Src/WT61.c:67:8:WT61_GetYawAngle	4	static
+../Core/Src/WT61.c:71:6:WT61_CalculateFullAngles	8	static
+../Core/Src/WT61.c:83:6:HAL_UART_RxCpltCallback	16	static
