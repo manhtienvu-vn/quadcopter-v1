@@ -13,11 +13,6 @@ UART_HandleTypeDef *IMU_UART;
 volatile double yaw_angle = 0;
 volatile double pitch_angle = 0;
 volatile double roll_angle = 0;
-
-extern volatile double angleZ;
-extern volatile double angleX;
-extern volatile double angleY;
-
 //
 //A data packet contains exactly 33 bytes -> It's always better to define an array with size > 33
 uint8_t data_packet[40];
@@ -28,11 +23,11 @@ bool handle = false;
 void WT61_Init(UART_HandleTypeDef *huart){
 	IMU_UART = huart;
 	WT61_ResetAngle();
-	WT61_ReceiveDataPacket();
+	WT61_CheckProtocolHeader();
 }
 
 void WT61_SetBaudrate(uint16_t MCU_BAUDRATE, uint16_t IMU_BAUDRATE, uint8_t TARGET_BAUDRATE){
-	HAL_UART_DMAStop(IMU_UART);
+	HAL_UART_DMA_Stop(IMU_UART);
 
 	//NOTE: To send any data from MCU Tx to the IMU Rx, we have to synchronize the communication baudrate
 	//Case: Tx Rate != Rx Rate -> Change Tx Rate to Rx Rate before transmitting the data command
@@ -79,25 +74,15 @@ void WT61_ReceiveDataPacket(){
 }
 
 void WT61_CheckProtocolHeader(){
-	if (handle == true){
-		HAL_UART_DMAStop(IMU_UART);
-		HAL_UART_Receive(IMU_UART, &check_bit, 1, 1000);
-
-		if(check_bit != PROTOCOL_HEADER){
-
-			while (check_bit != PROTOCOL_HEADER){
-
-				HAL_UART_Receive(IMU_UART, &check_bit, 1, 1000);
-
-			}
-			check_bit = 0x00;
-			handle = false;
-			WT61_ReceiveDataPacket();
+	HAL_UART_Receive(IMU_UART, &check_bit, 1, 1000);
+	if(check_bit != PROTOCOL_HEADER){
+		while (check_bit != PROTOCOL_HEADER){
+			HAL_UART_Receive(IMU_UART, &check_bit, 1, 1000);
 		}
+		check_bit = 0x00;
+		WT61_ReceiveDataPacket();
 	}
 }
-
-
 
 bool WT61_CheckDataField(){
 	if (data_packet[0] != FIELD_ANGLE){
@@ -136,11 +121,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart->Instance == IMU_UART->Instance){
 		WT61_CalculateFullAngles();
-
-		angleZ = yaw_angle;
-		angleX = pitch_angle;
-		angleY = roll_angle;
-
 		WT61_ReceiveDataPacket();
 	}
 }

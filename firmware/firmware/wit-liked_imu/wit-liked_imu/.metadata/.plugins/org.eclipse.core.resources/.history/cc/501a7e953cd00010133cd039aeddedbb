@@ -26,7 +26,6 @@ static const uint8_t BAUDRATE_9600[] = {0xFF, 0xAA, 0x64};
 static const uint8_t ANGLEZ_ZERO[] = {0xFF, 0xAA, 0x52};
 
 void WT61_Init(UART_HandleTypeDef *huart);
-void WT61_SetBaudrate(uint16_t MCU_BAUDRATE, uint16_t IMU_OUTPUT_BAUDRATE, uint8_t TARGET_BAUDRATE);
 double WT61_GetYawAngle();
 double WT61_GetRollAngle();
 double WT61_GetPitchAngle();

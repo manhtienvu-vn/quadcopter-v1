@@ -80,7 +80,7 @@ void WT61_ReceiveDataPacket(){
 
 void WT61_CheckProtocolHeader(){
 	if (handle == true){
-		HAL_UART_DMAStop(IMU_UART);
+
 		HAL_UART_Receive(IMU_UART, &check_bit, 1, 1000);
 
 		if(check_bit != PROTOCOL_HEADER){
@@ -91,7 +91,7 @@ void WT61_CheckProtocolHeader(){
 
 			}
 			check_bit = 0x00;
-			handle = false;
+
 			WT61_ReceiveDataPacket();
 		}
 	}

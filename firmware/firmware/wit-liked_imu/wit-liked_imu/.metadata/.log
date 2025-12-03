@@ -125,3 +125,24 @@ java.lang.IllegalStateException: Call stack for thread main
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-12-03 11:47:52.499
 !MESSAGE Indexed 'wit-liked-imu' (23 sources, 119 headers) in 3.63 sec: 11,721 declarations; 40,916 references; 7 unresolved inclusions; 1,020 syntax errors; 1,302 unresolved names (2.4%)
+!SESSION 2025-12-03 16:10:50.195 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-12-03 16:10:54.713
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-12-03 16:10:54.714
+!MESSAGE Log4j2 initialized with config file D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\wit-liked_imu\wit-liked_imu\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-12-03 16:11:03.054
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2025-12-03 18:52:09.237
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 2 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2025-12-03 18:52:09.238
+!MESSAGE Existing sessions are:

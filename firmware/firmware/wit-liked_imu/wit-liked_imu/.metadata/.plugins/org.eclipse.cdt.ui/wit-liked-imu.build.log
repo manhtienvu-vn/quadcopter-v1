@@ -1,0 +1,10 @@
+18:55:44 **** Incremental Build of configuration Debug for project wit-liked-imu ****
+make -j16 all 
+arm-none-eabi-size  wit-liked-imu.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13616	     12	   1840	  15468	   3c6c	wit-liked-imu.elf
+Finished building: default.size.stdout
+ 
+
+18:55:44 Build Finished. 0 errors, 0 warnings. (took 213ms)
+

@@ -31,9 +31,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-volatile double angleZ;
-volatile double angleX;
-volatile double angleY;
+double angleZ;
+double angleX;
+double angleY;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -98,7 +98,9 @@ int main(void)
   /* USER CODE END 2 */
 
 /*
-
+  angleZ = WT61_GetYawAngle();
+  angleX = WT61_GetPitchAngle();
+  angleY = WT61_GetRollAngle();
 */
 
   /* Infinite loop */
@@ -106,10 +108,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  WT61_CheckProtocolHeader();
 	  angleZ = WT61_GetYawAngle();
-	    angleX = WT61_GetPitchAngle();
-	    angleY = WT61_GetRollAngle();
+	  angleX = WT61_GetPitchAngle();
+	  angleY = WT61_GetRollAngle();
     /* USER CODE BEGIN 3 */
 
   }
