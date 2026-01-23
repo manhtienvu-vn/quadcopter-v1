@@ -1,0 +1,49 @@
+/*
+ * MPU6050.h
+ *
+ *  Created on: Jan 23, 2026
+ *      Author: ADMIN
+ */
+
+#ifndef INC_MPU6050_H_
+#define INC_MPU6050_H_
+
+#define RAD_2_DEG   57.29578f // [deg/rad]
+#define TEMP_LSB_2_DEGREE 131.0f   // [bit/celsius]
+#define TEMP_LSB_OFFSET 16384.0f
+uint8_t RETURN_DATA;
+uint8_t mData;
+
+#define MPU6050_ADDRESS 0x68 << 1  //I2C Address contains only 7 bits
+#define MPU6050_WHO_AM_I_ADDRESS 0x75
+#define MPU6050_SMPLRT_DIV_REGISTER   0x19
+#define MPU6050_DPLF_CONFIG_REGISTER  0x1A
+#define MPU6050_GYRO_CONFIG_REGISTER  0x1B
+#define MPU6050_ACCEL_CONFIG_REGISTER 0x1C
+#define MPU6050_PWR_MGMT_1_REGISTER   0x6B
+#define MPU6050_GYRO_OUT_REGISTER     0x43
+#define MPU6050_ACCEL_OUT_REGISTER    0x3B
+
+float dt = 0;
+int16_t raw_ax = 0, raw_ay = 0, raw_az = 0, raw_gx = 0, raw_gy = 0, raw_gz = 0;
+float gyroX = 0, gyroY = 0, gyroZ = 0, gyroX_offsets = 0, gyroY_offsets = 0, gyroZ_offsets = 0;
+float accelX = 0, accelY = 0, accelZ = 0, accelX_offsets = 0, accelY_offsets = 0, accelZ_offsets = 0;
+float angleX = 0, angleY = 0, angleZ = 0;
+
+uint32_t current_Time = 0;
+uint32_t prev_Time = 0;
+
+uint8_t check;
+HAL_StatusTypeDef status;
+
+extern I2C_HandleTypeDef hi2c1;
+extern TIM_HandleTypeDef htim2;
+
+void MPU6050_Init();
+void MPU6050_GetAccel();
+void MPU6050_GetGyro();
+void MPU6050_Calibrate();
+void MPU6050_GetFullReadings();
+void MPU6050_GetFilteredData(float filterGyroCoef);
+
+#endif /* INC_MPU6050_H_ */

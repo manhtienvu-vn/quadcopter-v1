@@ -1,0 +1,10 @@
+18:17:35 **** Incremental Build of configuration Debug for project BrainX_Testing_Firmware_V1 ****
+make -j16 all 
+arm-none-eabi-size  BrainX_Testing_Firmware_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  36812	    252	   5332	  42396	   a59c	BrainX_Testing_Firmware_V1.elf
+Finished building: default.size.stdout
+ 
+
+18:17:35 Build Finished. 0 errors, 0 warnings. (took 255ms)
+

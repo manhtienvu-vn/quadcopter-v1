@@ -1,2 +1,4 @@
+description.autobuilding=true
 eclipse.preferences.version=1
+pathvariable.PROJECT_LOC=D\:/Mechatronics/STM32CubeMX + KeilC/i2c_mpu6050
 version=1

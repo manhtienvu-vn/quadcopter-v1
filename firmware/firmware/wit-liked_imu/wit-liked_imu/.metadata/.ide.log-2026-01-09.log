@@ -1,0 +1,193 @@
+2026-01-11 10:32:39,056 [INFO] WebApp:191 - Connection restablished
+2026-01-11 10:32:39,189 [INFO] WebApp:194 - Connection lost
+2026-01-11 10:32:39,504 [INFO] WebApp:191 - Connection restablished
+2026-01-11 10:32:42,283 [INFO] WebApp:194 - Connection lost
+2026-01-11 10:32:42,608 [INFO] WebApp:191 - Connection restablished
+2026-01-11 11:49:31,087 [INFO] WebApp:194 - Connection lost
+2026-01-11 11:51:57,698 [INFO] WebApp:191 - Connection restablished
+2026-01-11 11:51:58,685 [INFO] WebApp:194 - Connection lost
+2026-01-11 11:51:59,148 [INFO] WebApp:191 - Connection restablished
+2026-01-11 11:52:01,761 [INFO] WebApp:194 - Connection lost
+2026-01-11 11:52:01,899 [INFO] WebApp:191 - Connection restablished
+2026-01-11 11:53:22,671 [INFO] WebApp:194 - Connection lost
+2026-01-11 11:53:22,996 [INFO] WebApp:191 - Connection restablished
+2026-01-11 14:38:49,718 [INFO] WebApp:194 - Connection lost
+2026-01-11 14:38:56,776 [INFO] WebApp:191 - Connection restablished
+2026-01-11 14:39:03,770 [INFO] WebApp:194 - Connection lost
+2026-01-11 14:39:04,003 [INFO] WebApp:191 - Connection restablished
+2026-01-11 14:39:07,152 [INFO] WebApp:194 - Connection lost
+2026-01-11 14:39:07,336 [INFO] WebApp:191 - Connection restablished
+2026-01-11 16:27:26,794 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,460x199,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2026-01-11 16:27:40,391 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 700567240 Bytes (1073741824)
+2026-01-11 16:27:42,022 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 735170248 Bytes (1073741824)
+2026-01-11 16:27:45,523 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 895602376 Bytes (1073741824)
+2026-01-11 16:27:46,496 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USB_DEVICE
+2026-01-11 16:27:46,496 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2026-01-11 16:27:46,497 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2026-01-11 16:27:46,497 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USB_OTG_FS
+2026-01-11 16:27:46,497 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2026-01-11 16:27:46,497 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-11 16:27:46,497 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-11 16:27:46,497 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2026-01-11 16:27:46,497 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: UART
+2026-01-11 16:27:46,498 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2026-01-11 16:27:46,499 [INFO] CodeGenerator:882 - code generatio: config db path: C:/Users/ADMIN/.stm32cubemx/databases/DB.6.0.121/db/
+2026-01-11 16:27:46,515 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-11 16:27:46,516 [INFO] Argument:327 - 	 sub Args: 
+2026-01-11 16:27:46,516 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream2
+2026-01-11 16:27:46,516 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream2
+2026-01-11 16:27:46,516 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-11 16:27:46,516 [INFO] Argument:327 - 	 sub Args: 
+2026-01-11 16:27:46,516 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-11 16:27:46,516 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-11 16:27:46,517 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-11 16:27:46,517 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-11 16:27:46,517 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-11 16:27:46,517 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-11 16:27:46,517 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-11 16:27:46,517 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-11 16:27:46,517 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-11 16:27:46,518 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-11 16:27:46,518 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-11 16:27:46,518 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-11 16:27:46,518 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-11 16:27:46,518 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-11 16:27:46,518 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-11 16:27:46,519 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-11 16:27:46,519 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-11 16:27:46,519 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-11 16:27:46,519 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-11 16:27:46,519 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-11 16:27:46,520 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-11 16:27:46,520 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-11 16:27:46,520 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-11 16:27:46,520 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-11 16:27:46,520 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-11 16:27:46,520 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-11 16:27:46,520 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-11 16:27:46,520 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-11 16:27:46,521 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-11 16:27:46,521 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-11 16:27:46,521 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-11 16:27:46,521 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-11 16:27:46,521 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-11 16:27:46,521 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-11 16:27:46,521 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-11 16:27:46,521 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-11 16:27:46,521 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-11 16:27:46,521 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-11 16:27:46,522 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-11 16:27:46,522 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-11 16:27:46,525 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-11 16:27:46,525 [INFO] Argument:327 - 	 sub Args: 
+2026-01-11 16:27:46,525 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream5
+2026-01-11 16:27:46,525 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream5
+2026-01-11 16:27:46,526 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-11 16:27:46,526 [INFO] Argument:327 - 	 sub Args: 
+2026-01-11 16:27:46,526 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-11 16:27:46,526 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-11 16:27:46,526 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-11 16:27:46,526 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-11 16:27:46,526 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-11 16:27:46,526 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-11 16:27:46,527 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-11 16:27:46,527 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-11 16:27:46,527 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-11 16:27:46,527 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-11 16:27:46,527 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-11 16:27:46,527 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-11 16:27:46,527 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-11 16:27:46,527 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-11 16:27:46,527 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-11 16:27:46,528 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-11 16:27:46,528 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-11 16:27:46,528 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-11 16:27:46,528 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-11 16:27:46,528 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-11 16:27:46,528 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-11 16:27:46,528 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-11 16:27:46,528 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-11 16:27:46,528 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-11 16:27:46,529 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-11 16:27:46,529 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-11 16:27:46,529 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-11 16:27:46,529 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-11 16:27:46,529 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-11 16:27:46,529 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-11 16:27:46,530 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-11 16:27:46,530 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-11 16:27:46,530 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-11 16:27:46,530 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-11 16:27:46,530 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-11 16:27:46,530 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-11 16:27:46,530 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-11 16:27:46,530 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-11 16:27:46,530 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-11 16:27:46,530 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-11 16:27:46,534 [WARN] IP:2250 - DEVICE_SERIAL0_CDC_FS not found: check if there is a RefParameter without a condition.
+2026-01-11 16:27:46,534 [WARN] IP:2250 - DEVICE_SERIAL1_CDC_FS not found: check if there is a RefParameter without a condition.
+2026-01-11 16:27:46,536 [WARN] IP:2250 - DEVICE_SERIAL2_CDC_FS not found: check if there is a RefParameter without a condition.
+2026-01-11 16:27:46,690 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\license.tmp_save
+2026-01-11 16:27:47,283 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\license.tmp
+2026-01-11 16:27:47,404 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\gpio.c_save
+2026-01-11 16:27:47,746 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\gpio.c
+2026-01-11 16:27:47,755 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\gpio.h_save
+2026-01-11 16:27:47,949 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\gpio.h
+2026-01-11 16:27:48,052 [WARN] IPConfigManager:3217 - Warning: the RefConfig PWREx_EnableUSBVoltageDetector is not available in your config.xml file
+2026-01-11 16:27:48,065 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\usb_otg_fs_vars.tmp_save
+2026-01-11 16:27:48,238 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\usb_otg_fs_vars.tmp
+2026-01-11 16:27:48,243 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\usb_otg_fs_inc.tmp_save
+2026-01-11 16:27:48,395 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\usb_otg_fs_inc.tmp
+2026-01-11 16:27:48,401 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\usb_otg_fs_HalInit.tmp_save
+2026-01-11 16:27:48,610 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\usb_otg_fs_HalInit.tmp
+2026-01-11 16:27:48,615 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\usb_otg_fs_Msp.tmp_save
+2026-01-11 16:27:48,810 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\usb_otg_fs_Msp.tmp
+2026-01-11 16:27:49,169 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2026-01-11 16:27:49,225 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\dma.c_save
+2026-01-11 16:27:49,357 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\dma.c
+2026-01-11 16:27:49,364 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\dma.h_save
+2026-01-11 16:27:49,493 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\dma.h
+2026-01-11 16:27:49,516 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\usart.c_save
+2026-01-11 16:27:49,794 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\usart.c
+2026-01-11 16:27:49,803 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\usart.h_save
+2026-01-11 16:27:49,954 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\usart.h
+2026-01-11 16:27:50,006 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2026-01-11 16:27:50,021 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usb_device.c_save
+2026-01-11 16:27:50,168 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usb_device.c
+2026-01-11 16:27:50,186 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usb_device.h_save
+2026-01-11 16:27:50,356 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usb_device.h
+2026-01-11 16:27:50,368 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\Target\usbd_conf.h_save
+2026-01-11 16:27:50,485 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\Target\usbd_conf.h
+2026-01-11 16:27:50,503 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\Target\usbd_conf.c_save
+2026-01-11 16:27:50,606 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\Target\usbd_conf.c
+2026-01-11 16:27:50,613 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usbd_desc.h_save
+2026-01-11 16:27:50,707 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usbd_desc.h
+2026-01-11 16:27:50,715 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usbd_desc.c_save
+2026-01-11 16:27:50,821 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usbd_desc.c
+2026-01-11 16:27:50,840 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usbd_cdc_if.h_save
+2026-01-11 16:27:50,943 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usbd_cdc_if.h
+2026-01-11 16:27:50,950 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usbd_cdc_if.c_save
+2026-01-11 16:27:51,068 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\USB_DEVICE\App\usbd_cdc_if.c
+2026-01-11 16:27:51,089 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\stm32f4xx_it.c_save
+2026-01-11 16:27:51,334 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\stm32f4xx_it.c
+2026-01-11 16:27:51,342 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\stm32f4xx_it.h_save
+2026-01-11 16:27:51,435 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\stm32f4xx_it.h
+2026-01-11 16:27:51,489 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\stm32f4xx_hal_msp.c_save
+2026-01-11 16:27:51,622 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\stm32f4xx_hal_msp.c
+2026-01-11 16:27:51,637 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\system.tmp_save
+2026-01-11 16:27:51,721 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\MXTmpFiles\system.tmp
+2026-01-11 16:27:51,738 [INFO] CodeEngine:319 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\stm32f4xx_hal_conf.h_save
+2026-01-11 16:27:51,847 [INFO] CodeEngine:343 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\stm32f4xx_hal_conf.h
+2026-01-11 16:27:51,910 [INFO] ApiDbMcu:508 - Load IP Config File for USART3
+2026-01-11 16:27:51,927 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\main.h_save
+2026-01-11 16:27:52,058 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Inc\main.h
+2026-01-11 16:27:52,076 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\main.c_save
+2026-01-11 16:27:52,218 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_S4V_Robot_Kit\Project_BrainX\firmware\BrainX_Testing_Firmware_V1\Core\Src\main.c
+2026-01-11 16:27:52,787 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 308mS.
+2026-01-11 16:27:52,795 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2026-01-11 16:27:52,914 [INFO] ConfigFileManager:1590 - The Die is : DIE413
+2026-01-11 16:27:54,156 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1360mS.
+2026-01-11 16:27:54,157 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2026-01-11 16:27:54,162 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2026-01-11 17:04:03,719 [INFO] WebApp:194 - Connection lost
+2026-01-11 17:04:04,005 [INFO] WebApp:191 - Connection restablished

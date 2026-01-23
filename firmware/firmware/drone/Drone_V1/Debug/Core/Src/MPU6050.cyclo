@@ -1,0 +1,6 @@
+../Core/Src/MPU6050.c:40:6:MPU6050_Init	3
+../Core/Src/MPU6050.c:57:6:MPU6050_GetAccel	1
+../Core/Src/MPU6050.c:71:6:MPU6050_GetGyro	1
+../Core/Src/MPU6050.c:84:6:MPU6050_Calibrate	2
+../Core/Src/MPU6050.c:107:6:MPU6050_GetFullReadings	1
+../Core/Src/MPU6050.c:131:6:MPU6050_GetFilteredData	1

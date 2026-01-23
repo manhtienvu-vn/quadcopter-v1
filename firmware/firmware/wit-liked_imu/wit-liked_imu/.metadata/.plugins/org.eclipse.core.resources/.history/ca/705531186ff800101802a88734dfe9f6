@@ -1,0 +1,18 @@
+/*
+ * MPU6050.h
+ *
+ *  Created on: Jan 23, 2026
+ *      Author: ADMIN
+ */
+
+#ifndef INC_MPU6050_H_
+#define INC_MPU6050_H_
+
+void MPU6050_Init(void);
+void MPU6050_GetAccel(void);
+void MPU6050_GetGyro(void);
+void MPU6050_Calibrate(void);
+void MPU6050_GetFullReadings(void);
+void MPU6050_GetFilteredData(float filterGyroCoef);
+
+#endif /* INC_MPU6050_H_ */
