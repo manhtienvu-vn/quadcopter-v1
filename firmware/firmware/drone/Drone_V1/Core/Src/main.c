@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "MPU6050.h"
+#include "WT61.h"
 #include "stdio.h"
 #include "string.h"
 
@@ -124,6 +125,7 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim2);
+  WT61_Init(&huart2);
   MPU6050_Init();
   MPU6050_Calibrate();
   /* USER CODE END 2 */
@@ -135,6 +137,11 @@ int main(void)
     /* USER CODE END WHILE */
 	MPU6050_GetFullReadings();
 	MPU6050_GetFilteredData(0.98);
+
+	WT61_CheckProtocolHeader();
+	angleZ = WT61_GetYawAngle();
+//	angleX = WT61_GetPitchAngle();
+//	angleY = WT61_GetRollAngle();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

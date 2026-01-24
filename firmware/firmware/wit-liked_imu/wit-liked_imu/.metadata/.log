@@ -3489,3 +3489,24 @@ java.lang.Exception: "D:\Mechatronics\Repositories\Project_Drone\firmware\firmwa
 
 !ENTRY org.eclipse.cdt.dsf 4 10005 2026-01-23 16:51:13.859
 !MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.gdb.internal.ui.actions.DsfTerminateCommand$3$1@2e619849): Status OK: unknown code=0 OK' resulted in a rejected execution exception.
+!SESSION 2026-01-24 11:19:26.992 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-01-24 11:19:32.560
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-01-24 11:19:32.562
+!MESSAGE Log4j2 initialized with config file D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\wit-liked_imu\wit-liked_imu\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-01-24 11:19:40.286
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-24 11:20:46.350
+!MESSAGE Indexed 'wit-liked-imu' (23 sources, 119 headers) in 4.41 sec: 11,732 declarations; 40,959 references; 7 unresolved inclusions; 1,020 syntax errors; 1,310 unresolved names (2.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-01-24 11:21:00.707
+!MESSAGE Indexed 'wit-liked-imu' (23 sources, 121 headers) in 1.57 sec: 11,738 declarations; 43,078 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.44%)

@@ -1,4 +1,6 @@
 "./Core/Src/MPU6050.o"
+"./Core/Src/PID.o"
+"./Core/Src/WT61.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f4xx_hal_msp.o"
 "./Core/Src/stm32f4xx_it.o"

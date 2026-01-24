@@ -108,8 +108,8 @@ int main(void)
     /* USER CODE END WHILE */
 	  WT61_CheckProtocolHeader();
 	  angleZ = WT61_GetYawAngle();
-	    angleX = WT61_GetPitchAngle();
-	    angleY = WT61_GetRollAngle();
+	  angleX = WT61_GetPitchAngle();
+	  angleY = WT61_GetRollAngle();
     /* USER CODE BEGIN 3 */
 
   }
