@@ -27,13 +27,11 @@ static const uint8_t ANGLEZ_ZERO[] = {0xFF, 0xAA, 0x52};
 
 UART_HandleTypeDef *IMU_UART;
 
-volatile double yaw_angle = 0;
-volatile double pitch_angle = 0;
-volatile double roll_angle = 0;
-
-extern volatile double angleZ;
-extern volatile double angleX;
-extern volatile double angleY;
+volatile float yaw_angle = 0;
+volatile float prev_yaw_angle = 0;
+volatile float save_yaw_angle = 0;
+volatile float pitch_angle = 0;
+volatile float roll_angle = 0;
 
 //A data packet contains exactly 33 bytes -> It's always better to define an array with size > 33
 uint8_t data_packet[40];
@@ -133,7 +131,22 @@ double WT61_GetRollAngle(){
 }
 
 double WT61_GetYawAngle(){
-	return yaw_angle;
+	WT61_HandleAngleWrapAround();
+	return yaw_angle - save_yaw_angle;
+}
+
+void WT61_HandleAngleWrapAround(){
+	// 0 -> 360 degree
+	if (yaw_angle - prev_yaw_angle > 300.0f){
+		save_yaw_angle += 360.0f;
+	}
+
+	//360 -> 0 degree
+	else if (yaw_angle - prev_yaw_angle < -300.0f){
+		save_yaw_angle -= 360.0f;
+	}
+
+	prev_yaw_angle = yaw_angle;
 }
 
 void WT61_CalculateFullAngles(){
@@ -151,13 +164,13 @@ void WT61_CalculateFullAngles(){
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart->Instance == IMU_UART->Instance){
-		WT61_CalculateFullAngles();
+//		WT61_CalculateFullAngles();
 
-		angleZ = yaw_angle;
-		angleX = pitch_angle;
-		angleY = roll_angle;
+//		angleZ = yaw_angle;
+//		angleX = pitch_angle;
+//		angleY = roll_angle;
 
-		WT61_ReceiveDataPacket();
+//		WT61_ReceiveDataPacket();
 	}
 }
 

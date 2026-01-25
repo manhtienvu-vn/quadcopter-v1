@@ -7,13 +7,10 @@
 #ifndef INC_MPU6050_H_
 #define INC_MPU6050_H_
 
-extern I2C_HandleTypeDef hi2c1;
-extern TIM_HandleTypeDef htim2;
-
-void MPU6050_Init();
+void MPU6050_Init(I2C_HandleTypeDef*HI2C, TIM_HandleTypeDef *HTIM);
 void MPU6050_GetAccel();
 void MPU6050_GetGyro();
-void MPU6050_Calibrate();
+void MPU6050_Calibrate(uint16_t duration);
 void MPU6050_GetFullReadings();
 void MPU6050_GetFilteredData(float filterGyroCoef);
 

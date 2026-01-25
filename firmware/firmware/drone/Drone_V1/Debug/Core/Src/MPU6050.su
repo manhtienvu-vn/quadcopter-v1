@@ -1,6 +1,6 @@
-../Core/Src/MPU6050.c:39:6:MPU6050_Init	24	static
-../Core/Src/MPU6050.c:56:6:MPU6050_GetAccel	32	static
-../Core/Src/MPU6050.c:70:6:MPU6050_GetGyro	32	static
-../Core/Src/MPU6050.c:83:6:MPU6050_Calibrate	40	static
-../Core/Src/MPU6050.c:106:6:MPU6050_GetFullReadings	40	static
-../Core/Src/MPU6050.c:130:6:MPU6050_GetFilteredData	40	static
+../Core/Src/MPU6050.c:42:6:MPU6050_Init	32	static
+../Core/Src/MPU6050.c:62:6:MPU6050_GetAccel	32	static
+../Core/Src/MPU6050.c:76:6:MPU6050_GetGyro	32	static
+../Core/Src/MPU6050.c:89:6:MPU6050_Calibrate	48	static
+../Core/Src/MPU6050.c:112:6:MPU6050_GetFullReadings	40	static
+../Core/Src/MPU6050.c:136:6:MPU6050_GetFilteredData	40	static

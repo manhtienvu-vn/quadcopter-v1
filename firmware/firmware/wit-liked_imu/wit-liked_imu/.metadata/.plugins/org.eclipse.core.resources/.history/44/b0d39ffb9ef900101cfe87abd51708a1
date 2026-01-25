@@ -1,0 +1,17 @@
+/*
+ * MPU6050.h
+ *
+ *      Author: ADMIN
+ */
+
+#ifndef INC_MPU6050_H_
+#define INC_MPU6050_H_
+
+void MPU6050_Init(I2C_HandleTypeDef*, TIM_HandleTypeDef*);
+void MPU6050_GetAccel();
+void MPU6050_GetGyro();
+void MPU6050_Calibrate();
+void MPU6050_GetFullReadings();
+void MPU6050_GetFilteredData(float);
+
+#endif /* INC_MPU6050_H_ */
