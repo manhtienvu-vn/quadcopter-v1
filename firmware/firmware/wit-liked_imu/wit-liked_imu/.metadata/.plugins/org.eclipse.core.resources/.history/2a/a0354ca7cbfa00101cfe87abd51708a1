@@ -211,8 +211,6 @@ int main(void)
 
   PID_SetParameters(&pitch_controller, 1.0f, 0.0f, 0.0f, 0.0f, angleY);
   HAL_TIM_Base_Start(&htim5);
-
-  MPU6050_GetFullReadings();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -1027,9 +1025,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 }
 
 void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c){
-	if(hi2c->Instance == hi2c2.Instance){
-		MPU6050_GetFilteredData(0.98f);
+	if(hi2c->Instance == hi2c1.Instance){
 		MPU6050_GetFullReadings();
+		MPU6050_GetFilteredData(0.98f);
 	}
 }
 

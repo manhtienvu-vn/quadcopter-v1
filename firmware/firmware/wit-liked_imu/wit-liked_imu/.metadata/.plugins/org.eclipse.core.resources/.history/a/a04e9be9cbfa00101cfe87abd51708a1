@@ -1027,7 +1027,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 }
 
 void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c){
-	if(hi2c->Instance == hi2c2.Instance){
+	if(hi2c->Instance == hi2c1.Instance){
 		MPU6050_GetFilteredData(0.98f);
 		MPU6050_GetFullReadings();
 	}
