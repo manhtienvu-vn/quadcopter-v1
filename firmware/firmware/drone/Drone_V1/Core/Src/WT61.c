@@ -161,18 +161,6 @@ void WT61_CalculateFullAngles(){
 
 }
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-	if (huart->Instance == IMU_UART->Instance){
-//		WT61_CalculateFullAngles();
-
-//		angleZ = yaw_angle;
-//		angleX = pitch_angle;
-//		angleY = roll_angle;
-
-//		WT61_ReceiveDataPacket();
-	}
-}
 
 
 

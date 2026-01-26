@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "MPU6050.h"
 #include "WT61.h"
+#include "PID.h"
 #include "stdio.h"
 #include "string.h"
 
@@ -35,6 +36,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
 extern float angleX, angleY;
 volatile float angleZ;
 extern HAL_StatusTypeDef status;
@@ -48,6 +50,27 @@ typedef enum {
 	GAMEPAD_DISCOVERY = 3
 } DroneStatus;
 
+DroneStatus drone_status;
+
+typedef enum {
+	MOTOR_LF = 0,
+	MOTOR_RF = 1,
+	MOTOR_LB = 2,
+	MOTOR_RB = 3
+} MotorSystem;
+
+MotorSystem drone_motor_system;
+
+PID roll_controller;
+PID pitch_controller;
+PID yaw_controller;
+
+uint8_t STATE = 0;
+
+uint32_t c_time = 0;
+uint32_t prv_time = 0;
+uint32_t duration = 0;
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -58,11 +81,14 @@ typedef enum {
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
 I2C_HandleTypeDef hi2c2;
+DMA_HandleTypeDef hdma_i2c2_rx;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
+TIM_HandleTypeDef htim5;
+TIM_HandleTypeDef htim8;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
@@ -71,7 +97,6 @@ DMA_HandleTypeDef hdma_usart1_rx;
 DMA_HandleTypeDef hdma_usart2_rx;
 
 /* USER CODE BEGIN PV */
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -87,20 +112,28 @@ static void MX_TIM2_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_TIM1_Init(void);
+static void MX_TIM5_Init(void);
+static void MX_TIM8_Init(void);
 /* USER CODE BEGIN PFP */
-
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void I2C_ResetDataBusToPullUp(I2C_HandleTypeDef *hi2c);
 
-void DRONE_SetStatus();
-void DRONE_SetSpeed();
-void DRONE_GamepadDiscovery();
-void DRONE_SensorCalibration();
-void DRONE_OnFlight();
+void DRONE_SetStatus(int8_t STATUS);
+void DRONE_SetSpeed(uint8_t MOTOR, uint8_t speed);
 
+void DRONE_GamepadDiscovery(void);
+void DRONE_SensorCalibration(void);
+
+void DRONE_ESCSetUp(void); // Plug in 'void' to show that the function does not require any parameters
+void DRONE_OnFlight(void); // Plug in 'void' to show that the function does not require any parameters
+void DRONE_Hover();
+void DRONE_RollLeft();
+void DRONE_RollRight();
+void DRONE_PitchForward();
+void DRONE_PitchBackward();
 /* USER CODE END 0 */
 
 /**
@@ -141,47 +174,83 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM4_Init();
   MX_TIM1_Init();
+  MX_TIM5_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
   HAL_TIM_Base_Start(&htim2);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
-  HAL_TIM_Base_Start_IT(&htim4);
 
-  /*Prevent I2C Devices from pulling the data bus LOW
+  /* Prevent I2C Devices from pulling the data bus LOW
   from previous working time + Send a 'STOP' signal */
   I2C_ResetDataBusToPullUp(&hi2c2);
 
-  /*The WT61 sensor is specifically used for 'YAW' angle (angleZ) measurement */
-//  WT61_Init(&huart1);
+  /* The WT61 sensor is specifically used for 'YAW' angle (angleZ) measurement */
+  WT61_Init(&huart1);
 
-  /*The MPU-6050 sensor measures 'ROLL' angle (angleX) and 'PITCH' angle (angleY)  */
-//  MPU6050_Init(&hi2c2, &htim2);
-//  MPU6050_Calibrate(2000);
+  /* The MPU-6050 sensor measures 'ROLL' angle (angleX) and 'PITCH' angle (angleY)  */
+  MPU6050_Init(&hi2c2, &htim2);
 
-  //	  MPU6050_GetFullReadings();
-  //	  	MPU6050_GetFilteredData(0.98);
+  /* Calibrate IMU Sensor for at least 2000 milliseconds */
+  DRONE_SetStatus(SENSOR_CALIBRATING);
+  MPU6050_Calibrate(2000);
 
-  	  //	WT61_CheckProtocolHeader();
-  	  //	angleZ = WT61_GetYawAngle();
-  	  //	HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, 1);
-  TIM1->CCR2 = 50;
-  TIM3->CCR1 = 50;
-  TIM3->CCR2 = 50;
-  TIM3->CCR3 = 50;
-  HAL_Delay(2500);
+  DRONE_SetStatus(OK);
+  /* Send 'START' signal to ESCs */
+  DRONE_ESCSetUp();
+
+  HAL_TIM_Base_Start_IT(&htim8);
+  HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_2);
+  HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_3);
+
+  PID_Init(&pitch_controller);
+  PID_Init(&roll_controller);
+  PID_Init(&yaw_controller);
+
+  PID_SetParameters(&pitch_controller, 1.0f, 0.0f, 0.0f, 0.0f, angleY);
+  HAL_TIM_Base_Start(&htim5);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  if(angleY > 20.0f){
+	  		HAL_GPIO_WritePin(LF_LED1_GPIO_Port, LF_LED1_Pin, 1);
+	  		HAL_GPIO_WritePin(RF_LED1_GPIO_Port, RF_LED1_Pin, 0);
+	  	}
+	  	else if(angleY < -20.0f){
+	  		HAL_GPIO_WritePin(LF_LED1_GPIO_Port, LF_LED1_Pin, 0);
+	  		HAL_GPIO_WritePin(RF_LED1_GPIO_Port, RF_LED1_Pin, 1);
+	  	}
+	  	else if(angleX < -20.0f){
+	  		HAL_GPIO_WritePin(LF_LED1_GPIO_Port, LF_LED1_Pin, 1);
+	  		HAL_GPIO_WritePin(RF_LED1_GPIO_Port, RF_LED1_Pin, 1);
+	  		DRONE_SetSpeed(MOTOR_LB, 60);
+	  		DRONE_SetSpeed(MOTOR_RB, 60);
+	  		DRONE_SetSpeed(MOTOR_LF, 51);
+	  		DRONE_SetSpeed(MOTOR_RF, 51);
+	  	}
+	  	else if(angleX > 20.0f){
+	  		DRONE_SetSpeed(MOTOR_LB, 51);
+	  		DRONE_SetSpeed(MOTOR_RB, 51);
+	  		DRONE_SetSpeed(MOTOR_LF, 60);
+	  		DRONE_SetSpeed(MOTOR_RF, 60);
+	  	}
+	  	else{
+	  		HAL_GPIO_WritePin(LF_LED1_GPIO_Port, LF_LED1_Pin, 0);
+	  		HAL_GPIO_WritePin(RF_LED1_GPIO_Port, RF_LED1_Pin, 0);
+	  		DRONE_SetSpeed(MOTOR_LB, 50);
+	  		DRONE_SetSpeed(MOTOR_RB, 50);
+	  		DRONE_SetSpeed(MOTOR_LF, 50);
+	  		DRONE_SetSpeed(MOTOR_RF, 50);
+	  	}
+
+	  	//	  	pitch_controller->output = PID_Update(pid, angleY, dt;)
     /* USER CODE END WHILE */
-	  TIM1->CCR2 = 60;
-	    TIM3->CCR1 = 60;
-	    TIM3->CCR2 = 60;
-	    TIM3->CCR3 = 60;
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -283,7 +352,7 @@ static void MX_I2C2_Init(void)
 
   /* USER CODE END I2C2_Init 1 */
   hi2c2.Instance = I2C2;
-  hi2c2.Init.ClockSpeed = 100000;
+  hi2c2.Init.ClockSpeed = 400000;
   hi2c2.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c2.Init.OwnAddress1 = 0;
   hi2c2.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
@@ -313,6 +382,7 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 0 */
 
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
   TIM_OC_InitTypeDef sConfigOC = {0};
   TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
@@ -327,6 +397,15 @@ static void MX_TIM1_Init(void)
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
   if (HAL_TIM_PWM_Init(&htim1) != HAL_OK)
   {
     Error_Handler();
@@ -423,6 +502,7 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 0 */
 
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
   TIM_OC_InitTypeDef sConfigOC = {0};
 
@@ -435,6 +515,15 @@ static void MX_TIM3_Init(void)
   htim3.Init.Period = 999;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
   if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
   {
     Error_Handler();
@@ -491,7 +580,7 @@ static void MX_TIM4_Init(void)
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 8999;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
   {
     Error_Handler();
@@ -510,6 +599,135 @@ static void MX_TIM4_Init(void)
   /* USER CODE BEGIN TIM4_Init 2 */
 
   /* USER CODE END TIM4_Init 2 */
+
+}
+
+/**
+  * @brief TIM5 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM5_Init(void)
+{
+
+  /* USER CODE BEGIN TIM5_Init 0 */
+
+  /* USER CODE END TIM5_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM5_Init 1 */
+
+  /* USER CODE END TIM5_Init 1 */
+  htim5.Instance = TIM5;
+  htim5.Init.Prescaler = 71;
+  htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim5.Init.Period = 4294967295;
+  htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM5_Init 2 */
+
+  /* USER CODE END TIM5_Init 2 */
+
+}
+
+/**
+  * @brief TIM8 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM8_Init(void)
+{
+
+  /* USER CODE BEGIN TIM8_Init 0 */
+
+  /* USER CODE END TIM8_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
+
+  /* USER CODE BEGIN TIM8_Init 1 */
+
+  /* USER CODE END TIM8_Init 1 */
+  htim8.Instance = TIM8;
+  htim8.Init.Prescaler = 71;
+  htim8.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim8.Init.Period = 999;
+  htim8.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim8.Init.RepetitionCounter = 0;
+  htim8.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim8) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim8, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_OC_Init(&htim8) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim8, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_TIMING;
+  sConfigOC.Pulse = 100;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
+  sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+  if (HAL_TIM_OC_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.Pulse = 250;
+  if (HAL_TIM_OC_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.Pulse = 750;
+  if (HAL_TIM_OC_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
+  sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
+  sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
+  sBreakDeadTimeConfig.DeadTime = 0;
+  sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
+  sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
+  sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
+  if (HAL_TIMEx_ConfigBreakDeadTime(&htim8, &sBreakDeadTimeConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM8_Init 2 */
+
+  /* USER CODE END TIM8_Init 2 */
 
 }
 
@@ -623,6 +841,9 @@ static void MX_DMA_Init(void)
   __HAL_RCC_DMA2_CLK_ENABLE();
 
   /* DMA interrupt init */
+  /* DMA1_Stream2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream2_IRQn);
   /* DMA1_Stream5_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
@@ -652,10 +873,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, LF_LED2_Pin|RB_LED2_Pin|RB_LED1_Pin|LF_LED1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOE, LF_LED2_Pin|RB_LED2_Pin|RB_LED1_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, LED_Pin|RF_LED1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LB_LED1_Pin|LB_LED2_Pin, GPIO_PIN_SET);
@@ -664,7 +885,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, RF_LED1_Pin|RF_LED2_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(RF_LED2_GPIO_Port, RF_LED2_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LF_LED1_GPIO_Port, LF_LED1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LF_LED2_Pin RB_LED2_Pin RB_LED1_Pin LF_LED1_Pin */
   GPIO_InitStruct.Pin = LF_LED2_Pin|RB_LED2_Pin|RB_LED1_Pin|LF_LED1_Pin;
@@ -699,61 +923,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-//void MPU6050Init(void){
-//
-//
-//	status = HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDRESS, 0x75, 1, &check, 1, 1000);
-//
-//	if (check == 0x68 || check == 0x70){
-//		mData = 0x00;
-//		HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDRESS, 0x6B, 1, &mData, 1, 1000);
-//
-//		mData = 0x07;
-//		HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDRESS, 0x19, 1, &mData, 1, 1000);
-//
-//		mData = 0x00;
-//		HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDRESS, 0x1B, 1, &mData, 1, 1000);
-//
-//		mData = 0x00;
-//		HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDRESS, 0x1C, 1, &mData, 1, 1000);
-//	}
-//}
-//
-//void MPU6050ReadG(void){
-//	uint8_t dataG[6];
-//	HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDRESS, 0x43, 1, dataG, 6, 1000);
-//	gx = (int16_t) (dataG[0] << 8 | dataG[1]);
-//	gy = (int16_t) (dataG[2] << 8 | dataG[3]);
-//	gz = (int16_t) (dataG[4] << 8 | dataG[5]);
-//
-//	GX = (float)gx/131.0f;
-//	GY = (float)gy/131.0f;
-//	GZ = (float)gz/131.0f;
-//}
-//
-//void MPU6050ReadA(void){
-//	uint8_t dataA[6];
-//	HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDRESS, 0x3B, 1, dataA, 6, 1000);
-//	ax = (int16_t) (dataA[0] << 8 | dataA[1]);
-//	ay = (int16_t) (dataA[2] << 8 | dataA[3]);
-//	az = (int16_t) (dataA[4] << 8 | dataA[5]);
-//
-//	AX = (float)ax/16384.0f;
-//	AY = (float)ay/16384.0f;
-//	AZ = (float)az/16384.0f;
-//}
-//
-//void filter(float AX, float AY, float AZ, float GX, float GY, float GZ){
-//	float pitchG = pitch + GX*(10000/1000000.0f);
-//	float rollG = roll + GY*(10000/1000000.0f);
-//
-//	float pitchA = atan2(AY, sqrt(AX*AX + AZ*AZ))*RAD_2_DEG;
-//	float rollA = atan2(AX, sqrt(AY*AY + AZ*AZ)) * RAD_2_DEG;
-//
-//	pitch = 0.98 * pitchG + 0.02 * pitchA;
-//	roll = 0.98 * rollG + 0.02 * rollA;
-//
-//}
 
 uint8_t numarray[40];
 
@@ -825,6 +994,117 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   if(htim->Instance == TIM4){
 	  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
   }
+}
+
+void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if(htim->Instance == TIM8){
+	  if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2){
+//		  c_time = __HAL_TIM_GET_COUNTER(&htim5);
+//	      MPU6050_GetFullReadings();
+//	      duration = c_time - prv_time;
+//	      prv_time = c_time;
+//	      MPU6050_GetFilteredData(0.98);
+	  }
+//	  else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3){
+//		  WT61_CheckProtocolHeader();
+//		  angleZ = WT61_GetYawAngle();
+//	  }
+  }
+}
+
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	if (huart->Instance == USART1){
+		WT61_CheckProtocolHeader();
+		WT61_CalculateFullAngles();
+		angleZ = WT61_GetYawAngle();
+		WT61_ReceiveDataPacket();
+	}
+}
+
+void DRONE_ESCSetUp(){
+	/* Standard ESCs require 'arming' signal to get on working mode */
+	/* Arming Signal: receive 50Hz signal - 1ms PWM time duration within at least 2 seconds */
+	TIM1->CCR2 = 50;
+	TIM3->CCR1 = 50;
+	TIM3->CCR2 = 50;
+	TIM3->CCR3 = 50;
+	HAL_Delay(2500);
+}
+
+//SENSOR_CONNECTION_FAULT = -2,
+//GAMEPAD_CONNECTION_FAULT = -1,
+//ANGLE_STABILITY_FAULT = 0,
+//OK = 1,
+//SENSOR_CALIBRATING = 2,
+//GAMEPAD_DISCOVERY = 3
+
+void DRONE_SetStatus(int8_t STATUS){
+	/* Timer Frequency = 2Hz (Overflow every 500 milliseconds)
+	 * APB Clock = 72 000 000 Hz (72MHz)
+	 * ARR = 9000 - 1
+	 * PRESCALER = 4000 - 1
+	 *                           APB Clock
+	   Timer Frequency  =  ---------------------
+	 	 	 	 	 	   (ARR+1)*(PRESCALER+1)
+	 */
+	if(STATUS == SENSOR_CONNECTION_FAULT){
+
+	}
+	else if(STATUS == GAMEPAD_CONNECTION_FAULT){
+
+	}
+	else if(STATUS == ANGLE_STABILITY_FAULT){
+
+	}
+	else if(STATUS == SENSOR_CALIBRATING){
+		/* Toggle LED every 1000 milliseconds */
+		HAL_TIM_Base_Stop_IT(&htim4);
+		TIM4->ARR = 8999;
+		TIM4->PSC = 7999;
+		HAL_TIM_Base_Start_IT(&htim4);
+	}
+	else if(STATUS == GAMEPAD_DISCOVERY){
+		/* Toggle LED every 250 milliseconds */
+		HAL_TIM_Base_Stop_IT(&htim4);
+		TIM4->ARR = 8999;
+		TIM4->PSC = 1999;
+		HAL_TIM_Base_Start_IT(&htim4);
+	}
+	else if(STATUS == OK){
+		/* Always turn LED on */
+		HAL_TIM_Base_Stop_IT(&htim4);
+		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, 1);
+	}
+}
+
+void DRONE_SetSpeed(uint8_t MOTOR, uint8_t speed){
+	if(MOTOR == MOTOR_LF){
+		if(speed >= 50 && speed <= 100){
+			TIM3->CCR2 = speed;
+		}
+	}
+	else if(MOTOR == MOTOR_RF){
+		if(speed >= 50 && speed <= 100){
+			TIM3->CCR1 = speed;
+		}
+	}
+	else if(MOTOR == MOTOR_LB){
+		if(speed >= 50 && speed <= 100){
+			TIM3->CCR3 = speed;
+		}
+	}
+	else if(MOTOR == MOTOR_RB){
+		if(speed >= 50 && speed <= 100){
+			TIM1->CCR2 = speed;
+		}
+	}
+}
+
+void DRONE_Hover(){
+
 }
 /* USER CODE END 4 */
 

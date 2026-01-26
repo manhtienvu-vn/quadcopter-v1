@@ -111,8 +111,8 @@ void MPU6050_Calibrate(uint16_t duration){
 
 void MPU6050_GetFullReadings(){
 	uint8_t accelBuffer[6];
-	HAL_I2C_Mem_Read(IMU_HI2C, MPU6050_ADDRESS, MPU6050_ACCEL_OUT_REGISTER, 1, accelBuffer, 6, 10);
-
+//	HAL_I2C_Mem_Read(IMU_HI2C, MPU6050_ADDRESS, MPU6050_ACCEL_OUT_REGISTER, 1, accelBuffer, 6, 10);
+	HAL_I2C_Mem_Read_DMA(IMU_HI2C, MPU6050_ADDRESS, MPU6050_ACCEL_OUT_REGISTER, 1, accelBuffer, 6);
 	raw_ax = (int16_t)(accelBuffer[0] << 8) | (accelBuffer[1]);
 	raw_ay = (int16_t)(accelBuffer[2] << 8) | (accelBuffer[3]);
 	raw_az = (int16_t)(accelBuffer[4] << 8) | (accelBuffer[5]);
@@ -122,7 +122,8 @@ void MPU6050_GetFullReadings(){
 	accelZ = ((float)raw_az/TEMP_LSB_OFFSET);
 	//-------------------------------------------------------------------------------------------------------
 	uint8_t gyroBuffer[6];
-	HAL_I2C_Mem_Read(IMU_HI2C, MPU6050_ADDRESS, MPU6050_GYRO_OUT_REGISTER, 1, gyroBuffer, 6, 10);
+//	HAL_I2C_Mem_Read(IMU_HI2C, MPU6050_ADDRESS, MPU6050_GYRO_OUT_REGISTER, 1, gyroBuffer, 6, 10);
+	HAL_I2C_Mem_Read_DMA(IMU_HI2C, MPU6050_ADDRESS, MPU6050_GYRO_OUT_REGISTER, 1, gyroBuffer, 6);
 
 	raw_gx = (int16_t)(gyroBuffer[0] << 8) | (gyroBuffer[1]);
 	raw_gy = (int16_t)(gyroBuffer[2] << 8) | (gyroBuffer[3]);
@@ -142,8 +143,8 @@ void MPU6050_GetFilteredData(float filterGyroCoef){
 	float newAngleXGyro = angleX + (gyroX)*(dt);
 	float newAngleYGyro = angleY + (gyroY)*(dt);
 
-	float newAngleXAccel = atan2(accelY, sqrt(accelX*accelX + accelZ*accelZ)) * RAD_2_DEG;
-	float newAngleYAccel = atan2(accelX, sqrt(accelY*accelY + accelZ*accelZ)) * RAD_2_DEG;
+	float newAngleXAccel = atan2f(accelY, sqrtf(accelX*accelX + accelZ*accelZ)) * RAD_2_DEG;
+	float newAngleYAccel = atan2f(accelX, sqrtf(accelY*accelY + accelZ*accelZ)) * RAD_2_DEG;
 
 	angleX = (filterGyroCoef)*newAngleXGyro + (1.0f-(filterGyroCoef))*newAngleXAccel;
 	angleY = (filterGyroCoef)*newAngleYGyro + (1.0f-(filterGyroCoef))*newAngleYAccel;

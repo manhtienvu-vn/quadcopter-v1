@@ -1,3 +1,4 @@
 ../Core/Src/PID.c:12:6:PID_Init	1
-../Core/Src/PID.c:32:6:PID_SetParameters	1
-../Core/Src/PID.c:40:7:PID_Compute	3
+../Core/Src/PID.c:33:6:PID_SetParameters	1
+../Core/Src/PID.c:41:6:PID_Update	1
+../Core/Src/PID.c:47:7:PID_Compute	3

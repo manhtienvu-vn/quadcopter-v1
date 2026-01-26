@@ -2993,3 +2993,1292 @@ arm-none-eabi-size  Drone_V1.elf
   19208	     12	   2436	  21656	   5498	Drone_V1.elf
 Finished building: default.size.stdout
  
+12:19:29 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  19228	     12	   2436	  21676	   54ac	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+12:31:29 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  19436	     12	   2436	  21884	   557c	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+12:48:38 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  19464	     12	   2436	  21912	   5598	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+12:50:25 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  19908	     12	   2492	  22412	   578c	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+12:52:19 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19908	     12	   2492	  22412	   578c	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+12:56:31 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16772	     12	   2436	  19220	   4b14	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+12:56:34 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16772	     12	   2436	  19220	   4b14	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+12:58:55 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16772	     12	   2436	  19220	   4b14	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+12:58:58 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16772	     12	   2436	  19220	   4b14	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+13:05:57 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16772	     12	   2436	  19220	   4b14	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+13:06:01 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16772	     12	   2436	  19220	   4b14	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+13:07:30 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16684	     12	   2436	  19132	   4abc	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+13:07:58 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  23936	     12	   2556	  26504	   6788	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+13:08:02 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23936	     12	   2556	  26504	   6788	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+13:10:07 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  23944	     12	   2556	  26512	   6790	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+13:12:37 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  25752	     12	   2572	  28336	   6eb0	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+13:12:40 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25752	     12	   2572	  28336	   6eb0	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+13:14:01 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  29432	     92	   2884	  32408	   7e98	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+13:14:31 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  31304	     92	   2884	  34280	   85e8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+13:14:34 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31304	     92	   2884	  34280	   85e8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+13:15:18 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  31304	     92	   2884	  34280	   85e8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+13:15:23 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31304	     92	   2884	  34280	   85e8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+13:29:25 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  31352	     92	   2884	  34328	   8618	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+13:29:28 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31352	     92	   2884	  34328	   8618	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+16:04:22 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:78:1: warning: data definition has no type or storage class
+   78 | LF = htim3.Instance->CCR2;
+      | ^~
+../Core/Src/main.c:78:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:78:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF, *RF, *LB, *RB;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:04:42 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:78:1: warning: data definition has no type or storage class
+   78 | LF = &htim3.Instance->CCR2;
+      | ^~
+../Core/Src/main.c:78:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:78:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF, *RF, *LB, *RB;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:04:45 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:78:1: warning: data definition has no type or storage class
+   78 | LF = htim3.Instance->CCR2;
+      | ^~
+../Core/Src/main.c:78:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:78:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF, *RF, *LB, *RB;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:05:13 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:78:1: warning: data definition has no type or storage class
+   78 | LF = htim3.Instance->CCR2;
+      | ^~
+../Core/Src/main.c:78:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:78:1: error: conflicting type qualifiers for 'LF'
+../Core/Src/main.c:53:19: note: previous declaration of 'LF' with type 'uint32_t' {aka 'volatile long unsigned int'}
+   53 | volatile uint32_t LF, RF, LB, RB;
+      |                   ^~
+../Core/Src/main.c:78:6: error: initializer element is not constant
+   78 | LF = htim3.Instance->CCR2;
+      |      ^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:05:52 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:78:1: warning: data definition has no type or storage class
+   78 | LF = htim3.Instance;
+      | ^~
+../Core/Src/main.c:78:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:78:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF, *RF, *LB, *RB;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:05:57 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:78:1: warning: data definition has no type or storage class
+   78 | LF = &htim3.Instance;
+      | ^~
+../Core/Src/main.c:78:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:78:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF, *RF, *LB, *RB;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:06:03 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:78:1: warning: data definition has no type or storage class
+   78 | LF = TIM3;
+      | ^~
+../Core/Src/main.c:78:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:78:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF, *RF, *LB, *RB;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:07:25 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:79:1: warning: data definition has no type or storage class
+   79 | LF = htim3.Instance;
+      | ^~
+../Core/Src/main.c:79:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:79:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:20: note: previous declaration of 'LF' with type 'TIM_HandleTypeDef *'
+   53 | TIM_HandleTypeDef *LF;
+      |                    ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:07:31 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:79:1: warning: data definition has no type or storage class
+   79 | LF = &htim3.Instance;
+      | ^~
+../Core/Src/main.c:79:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:79:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:20: note: previous declaration of 'LF' with type 'TIM_HandleTypeDef *'
+   53 | TIM_HandleTypeDef *LF;
+      |                    ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:07:55 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:79:1: warning: data definition has no type or storage class
+   79 | LF = &htim3.Instance;
+      | ^~
+../Core/Src/main.c:79:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:79:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:08:15 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:79:1: warning: data definition has no type or storage class
+   79 | LF = TIM3;
+      | ^~
+../Core/Src/main.c:79:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:79:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:09:44 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:79:1: warning: data definition has no type or storage class
+   79 | LF = (uint32_t)TIM3;
+      | ^~
+../Core/Src/main.c:79:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:79:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:15:58 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:80:1: warning: data definition has no type or storage class
+   80 | LF = *htim3.Instance;
+      | ^~
+../Core/Src/main.c:80:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:80:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:16:02 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:80:1: warning: data definition has no type or storage class
+   80 | LF = &htim3.Instance;
+      | ^~
+../Core/Src/main.c:80:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:80:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:17:12 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:80:1: warning: data definition has no type or storage class
+   80 | LF = htim3.Instance;
+      | ^~
+../Core/Src/main.c:80:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:80:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:18:04 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:96:1: warning: data definition has no type or storage class
+   96 | LF = htim3.Instance;
+      | ^~
+../Core/Src/main.c:96:1: warning: type defaults to 'int' in declaration of 'LF' [-Wimplicit-int]
+../Core/Src/main.c:96:1: error: conflicting types for 'LF'; have 'int'
+../Core/Src/main.c:53:14: note: previous declaration of 'LF' with type 'TIM_TypeDef *'
+   53 | TIM_TypeDef *LF;
+      |              ^~
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:18:27 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  31368	     92	   2892	  34352	   8630	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+16:19:18 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:132:3: error: 'LF' undeclared (first use in this function)
+  132 |   LF = htim3.Instance;
+      |   ^~
+../Core/Src/main.c:132:3: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:19:27 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  31352	     92	   2884	  34328	   8618	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+16:27:09 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  31352	     92	   2884	  34328	   8618	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+16:28:30 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  31552	     92	   2884	  34528	   86e0	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+16:29:02 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  31576	     92	   2884	  34552	   86f8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+16:31:20 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31576	     92	   2884	  34552	   86f8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+16:32:25 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  32088	     92	   2884	  35064	   88f8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+16:32:29 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32088	     92	   2884	  35064	   88f8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+16:37:26 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  32176	     92	   2884	  35152	   8950	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+16:37:36 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32176	     92	   2884	  35152	   8950	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+16:56:09 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  32176	     92	   2884	  35152	   8950	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+16:56:34 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  32176	     92	   2884	  35152	   8950	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+18:11:06 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/PID.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PID.d" -MT"Core/Src/PID.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PID.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/PID.c:32:6: error: conflicting types for 'PID_SetParameters'; have 'void(PID *, float,  float,  float,  float,  float)'
+   32 | void PID_SetParameters(PID *pid, float kp, float ki, float kd, float setpoint, float measurement){
+      |      ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/PID.c:9:
+../Core/Inc/PID.h:43:6: note: previous declaration of 'PID_SetParameters' with type 'void(PID *, float,  float,  float,  float,  float,  float)'
+   43 | void PID_SetParameters(PID *pid, float kp, float ki, float kd, float setpoint, float tau, float measurement);
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/PID.c:40:6: error: conflicting types for 'PID_Update'; have 'void(PID *, float,  float)'
+   40 | void PID_Update(PID *pid, float measurement, float dt){
+      |      ^~~~~~~~~~
+../Core/Inc/PID.h:44:6: note: previous declaration of 'PID_Update' with type 'void(PID *, float)'
+   44 | void PID_Update(PID *pid, float measurement);
+      |      ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/PID.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+18:11:20 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/PID.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PID.d" -MT"Core/Src/PID.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PID.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/PID.c:32:6: error: conflicting types for 'PID_SetParameters'; have 'void(PID *, float,  float,  float,  float,  float)'
+   32 | void PID_SetParameters(PID *pid, float kp, float ki, float kd, float setpoint, float measurement){
+      |      ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/PID.c:9:
+../Core/Inc/PID.h:43:6: note: previous declaration of 'PID_SetParameters' with type 'void(PID *, float,  float,  float,  float,  float,  float)'
+   43 | void PID_SetParameters(PID *pid, float kp, float ki, float kd, float setpoint, float tau, float measurement);
+      |      ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/PID.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+18:12:04 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/PID.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PID.d" -MT"Core/Src/PID.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PID.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  32312	     92	   3100	  35504	   8ab0	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+18:42:29 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/PID.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PID.d" -MT"Core/Src/PID.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PID.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/PID.c: In function 'PID_SetParameters':
+../Core/Src/PID.c:36:20: error: 'tau' undeclared (first use in this function)
+   36 |         pid->tau = tau;
+      |                    ^~~
+../Core/Src/PID.c:36:20: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:43: Core/Src/PID.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+18:43:14 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/PID.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/PID.d" -MT"Core/Src/PID.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/PID.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  33544	     92	   3244	  36880	   9010	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+18:46:49 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:247:33: error: invalid type argument of '->' (have 'PID')
+  247 |                 pitch_controller->output = PID_Update(pid, angleY, dt;)
+      |                                 ^~
+../Core/Src/main.c:247:55: error: 'pid' undeclared (first use in this function)
+  247 |                 pitch_controller->output = PID_Update(pid, angleY, dt;)
+      |                                                       ^~~
+../Core/Src/main.c:247:55: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:247:68: error: 'dt' undeclared (first use in this function)
+  247 |                 pitch_controller->output = PID_Update(pid, angleY, dt;)
+      |                                                                    ^~
+../Core/Src/main.c:247:70: error: expected ')' before ';' token
+  247 |                 pitch_controller->output = PID_Update(pid, angleY, dt;)
+      |                                                      ~               ^
+      |                                                                      )
+../Core/Src/main.c:247:72: error: expected ';' before '}' token
+  247 |                 pitch_controller->output = PID_Update(pid, angleY, dt;)
+      |                                                                        ^
+      |                                                                        ;
+  248 |     /* USER CODE BEGIN 3 */
+  249 |   }
+      |   ~                                                                     
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+18:46:57 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  33552	     92	   3244	  36888	   9018	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+19:44:53 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  33136	     92	   3244	  36472	   8e78	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+19:47:01 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  33152	     92	   3244	  36488	   8e88	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+19:48:27 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33152	     92	   3244	  36488	   8e88	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+19:53:01 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  33712	     92	   3244	  37048	   90b8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+19:53:18 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33712	     92	   3244	  37048	   90b8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+19:53:20 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33712	     92	   3244	  37048	   90b8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+19:53:32 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33712	     92	   3244	  37048	   90b8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+19:56:10 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  33712	     92	   3244	  37048	   90b8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+19:56:14 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33712	     92	   3244	  37048	   90b8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+19:56:27 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33712	     92	   3244	  37048	   90b8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+20:48:48 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  33744	     92	   3244	  37080	   90d8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+20:49:56 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34400	     92	   3268	  37760	   9380	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+20:50:08 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34400	     92	   3268	  37760	   9380	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+20:51:23 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34408	     92	   3268	  37768	   9388	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+20:51:27 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34408	     92	   3268	  37768	   9388	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+20:52:53 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34824	     92	   3268	  38184	   9528	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+20:53:03 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34824	     92	   3268	  38184	   9528	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+20:55:02 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34840	     92	   3268	  38200	   9538	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+20:55:10 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34840	     92	   3268	  38200	   9538	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+20:56:31 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34824	     92	   3268	  38184	   9528	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+20:56:37 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34824	     92	   3268	  38184	   9528	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+20:58:56 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34824	     92	   3268	  38184	   9528	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+20:59:04 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34824	     92	   3268	  38184	   9528	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+21:03:25 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34168	     92	   3244	  37504	   9280	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+21:03:32 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34168	     92	   3244	  37504	   9280	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+21:05:28 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34160	     92	   3244	  37496	   9278	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+21:05:32 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34160	     92	   3244	  37496	   9278	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+21:20:52 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:71:1: error: unknown type name 'uint16'; did you mean 'uint16_t'?
+   71 | uint16 prv_time = 0;
+      | ^~~~~~
+      | uint16_t
+../Core/Src/main.c: In function 'HAL_TIM_OC_DelayElapsedCallback':
+../Core/Src/main.c:1001:35: error: 'prev_time' undeclared (first use in this function); did you mean 'prv_time'?
+ 1001 |               duration = c_time - prev_time;
+      |                                   ^~~~~~~~~
+      |                                   prv_time
+../Core/Src/main.c:1001:35: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+21:21:00 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:71:1: error: unknown type name 'uint16'; did you mean 'uint16_t'?
+   71 | uint16 prv_time = 0;
+      | ^~~~~~
+      | uint16_t
+../Core/Src/main.c: In function 'HAL_TIM_OC_DelayElapsedCallback':
+../Core/Src/main.c:1002:15: error: 'prev_time' undeclared (first use in this function); did you mean 'prv_time'?
+ 1002 |               prev_time = c_time;
+      |               ^~~~~~~~~
+      |               prv_time
+../Core/Src/main.c:1002:15: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+21:21:03 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:71:1: error: unknown type name 'uint16'; did you mean 'uint16_t'?
+   71 | uint16 prv_time = 0;
+      | ^~~~~~
+      | uint16_t
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+21:21:12 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34232	     92	   3252	  37576	   92c8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+21:21:15 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34232	     92	   3252	  37576	   92c8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+21:24:26 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34232	     92	   3260	  37584	   92d0	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+21:24:30 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34232	     92	   3260	  37584	   92d0	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+21:27:48 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34232	     92	   3260	  37584	   92d0	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+21:27:52 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34232	     92	   3260	  37584	   92d0	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+21:34:25 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  30720	     92	   3260	  34072	   8518	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+21:52:20 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_GetFullReadings':
+../Core/Src/MPU6050.c:115:30: error: 'hi2c' undeclared (first use in this function)
+  115 |         HAL_I2C_Mem_Read_DMA(hi2c, MPU6050_ADDRESS, MPU6050_ACCEL_OUT_REGISTER, 1, accelBuffer, 6);
+      |                              ^~~~
+../Core/Src/MPU6050.c:115:30: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:43: Core/Src/MPU6050.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+21:52:29 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  32276	     92	   3260	  35628	   8b2c	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+21:54:56 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc "../Core/Src/WT61.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/WT61.d" -MT"Core/Src/WT61.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/WT61.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/WT61.c:24:22: warning: 'BAUDRATE_9600' defined but not used [-Wunused-const-variable=]
+   24 | static const uint8_t BAUDRATE_9600[] = {0xFF, 0xAA, 0x64};
+      |                      ^~~~~~~~~~~~~
+../Core/Src/WT61.c:23:22: warning: 'BAUDRATE_115200' defined but not used [-Wunused-const-variable=]
+   23 | static const uint8_t BAUDRATE_115200[] = {0xFF, 0xAA, 0x63};
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:1015:32: error: 'IMU_UART' undeclared (first use in this function)
+ 1015 |         if (huart->Instance == IMU_UART->Instance){
+      |                                ^~~~~~~~
+../Core/Src/main.c:1015:32: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+21:55:42 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:1015:32: error: 'UART1' undeclared (first use in this function); did you mean 'UART4'?
+ 1015 |         if (huart->Instance == UART1){
+      |                                ^~~~~
+      |                                UART4
+../Core/Src/main.c:1015:32: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+22:01:36 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  33788	     92	   3284	  37164	   912c	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+22:03:11 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34200	     92	   3284	  37576	   92c8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+22:05:21 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34200	     92	   3284	  37576	   92c8	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+22:10:05 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  34532	     92	   3380	  38004	   9474	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+22:10:13 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34532	     92	   3380	  38004	   9474	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+22:11:33 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Drone_V1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drone_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drone_V1.elf
+ 
+arm-none-eabi-size  Drone_V1.elf 
+arm-none-eabi-objdump -h -S Drone_V1.elf  > "Drone_V1.list"
+   text	   data	    bss	    dec	    hex	filename
+  31068	     12	   3044	  34124	   854c	Drone_V1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drone_V1.list
+ 
+22:11:37 **** Incremental Build of configuration Debug for project Drone_V1 ****
+make -j16 all 
+arm-none-eabi-size  Drone_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31068	     12	   3044	  34124	   854c	Drone_V1.elf
+Finished building: default.size.stdout
+ 

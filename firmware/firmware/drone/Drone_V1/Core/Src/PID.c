@@ -15,6 +15,7 @@ void PID_Init(PID *pid){
 	pid->Kp = 0.0f;
 	pid->Ki = 0.0f;
 	pid->Kd = 0.0f;
+	pid->tau = 0.0f;
 
 	pid->error = 0.0f;
 	pid->prev_error = 0.0f;
@@ -35,6 +36,12 @@ void PID_SetParameters(PID *pid, float kp, float ki, float kd, float setpoint, f
 	pid->Kd = kd;
 	pid->setpoint = setpoint;
 	pid->measurement = measurement;
+}
+
+void PID_Update(PID *pid, float measurement, float dt){
+	pid->measurement = measurement;
+	pid->dt = dt;
+	pid->tau = 5.0f * pid->dt;
 }
 
 float PID_Compute(PID *pid){
@@ -66,7 +73,7 @@ float PID_Compute(PID *pid){
 	                           2.tau + dt
 	*/
 
-	float numerator = 2.0f * (pid->measurement - pid->prev_measurement);
+	float numerator = 2.0f * (pid->measurement - pid->prev_measurement) + (2.0f * pid->tau - pid->dt)*pid->differentiation;
 	float denominator = 2.0f * pid->tau + pid->dt;
 	pid->differentiation = numerator / denominator;
 

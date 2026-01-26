@@ -9,4 +9,3 @@
 ../Core/Src/WT61.c:133:8:WT61_GetYawAngle	8	static
 ../Core/Src/WT61.c:138:6:WT61_HandleAngleWrapAround	4	static
 ../Core/Src/WT61.c:152:6:WT61_CalculateFullAngles	8	static
-../Core/Src/WT61.c:164:6:HAL_UART_RxCpltCallback	16	static
