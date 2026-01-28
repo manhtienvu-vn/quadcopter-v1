@@ -1,0 +1,10 @@
+#ifndef INC_GAMEPAD_H_
+#define INC_GAMEPAD_H_
+
+#include "main.h"
+
+void GAMEPAD_Init(UART_HandleTypeDef *huart);
+void GAMEPAD_ReceiveData();
+void GAMPEPAD_Update();
+
+#endif /* INC_GAMEPAD_H_ */

@@ -24,6 +24,7 @@
 #include "MPU6050.h"
 #include "WT61.h"
 #include "PID.h"
+#include "GAMEPAD.h"
 #include "stdio.h"
 #include "string.h"
 
@@ -37,7 +38,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-extern float angleX, angleY;
+extern float roll, pitch;
 volatile float angleZ;
 extern HAL_StatusTypeDef status;
 
@@ -47,10 +48,14 @@ typedef enum {
 	ANGLE_STABILITY_FAULT = 0,
 	OK = 1,
 	SENSOR_CALIBRATING = 2,
-	GAMEPAD_DISCOVERY = 3
+	GAMEPAD_DISCOVERY = 3,
+	LOCK = 4,
+	UNLOCKING = 5
 } DroneStatus;
 
 DroneStatus drone_status;
+
+//int8_t DRONE_STATUS;
 
 typedef enum {
 	MOTOR_LF = 0,
@@ -61,15 +66,29 @@ typedef enum {
 
 MotorSystem drone_motor_system;
 
+typedef struct {
+	uint8_t MOTOR_LF_SPEED;
+	uint8_t MOTOR_RF_SPEED;
+	uint8_t MOTOR_LB_SPEED;
+	uint8_t MOTOR_RB_SPEED;
+	uint8_t throttle;
+	uint8_t status;
+} DroneParameters;
+
+DroneParameters drone;
+//uint8_t MOTOR_LF_SPEED = 50, MOTOR_RF_SPEED = 50, MOTOR_LB_SPEED = 50, MOTOR_RB_SPEED = 50;
+
 PID roll_controller;
 PID pitch_controller;
 PID yaw_controller;
 
-uint8_t STATE = 0;
+float roll_output = 0.0f, pitch_output = 0.0f, yaw_output = 0.0f;
 
 uint32_t c_time = 0;
 uint32_t prv_time = 0;
 uint32_t duration = 0;
+
+extern GAMEPAD gamepad;
 
 /* USER CODE END PD */
 
@@ -123,13 +142,16 @@ void I2C_ResetDataBusToPullUp(I2C_HandleTypeDef *hi2c);
 
 void DRONE_SetStatus(int8_t STATUS);
 void DRONE_SetSpeed(uint8_t MOTOR, uint8_t speed);
-
+float DRONE_LimitThrottle(float throttle, float min_limit, float max_limit);
 void DRONE_GamepadDiscovery(void);
 void DRONE_SensorCalibration(void);
 
 void DRONE_ESCSetUp(void); // Plug in 'void' to show that the function does not require any parameters
-void DRONE_OnFlight(void); // Plug in 'void' to show that the function does not require any parameters
-void DRONE_Hover();
+void DRONE_Hover(uint8_t throttle);
+void DRONE_ReceiveCommand();
+void DRONE_Unlock();
+void DRONE_OnFlight(uint8_t throttle);
+
 void DRONE_RollLeft();
 void DRONE_RollRight();
 void DRONE_PitchForward();
@@ -187,67 +209,77 @@ int main(void)
   from previous working time + Send a 'STOP' signal */
   I2C_ResetDataBusToPullUp(&hi2c2);
 
-  /* The WT61 sensor is specifically used for 'YAW' angle (angleZ) measurement */
-  WT61_Init(&huart1);
+  if(status != HAL_OK){
+	  drone.status = SENSOR_CONNECTION_FAULT;
+  }
+  else{
+	  /* The WT61 sensor is specifically used for 'YAW' angle (angleZ) measurement */
+	    WT61_Init(&huart1);
 
-  /* The MPU-6050 sensor measures 'ROLL' angle (angleX) and 'PITCH' angle (angleY)  */
-  MPU6050_Init(&hi2c2, &htim2);
+	    /* The MPU-6050 sensor measures 'ROLL' angle (angleX) and 'PITCH' angle (angleY)  */
+	    MPU6050_Init(&hi2c2, &htim2);
 
-  /* Calibrate IMU Sensor for at least 2000 milliseconds */
-  DRONE_SetStatus(SENSOR_CALIBRATING);
-  MPU6050_Calibrate(2000);
+	    /* Calibrate IMU Sensor for at least 2000 milliseconds */
+	    DRONE_SetStatus(SENSOR_CALIBRATING);
+	    MPU6050_Calibrate(2000);
 
-  DRONE_SetStatus(OK);
-  /* Send 'START' signal to ESCs */
-  DRONE_ESCSetUp();
+	    DRONE_SetStatus(OK);
+	    /* Send 'START' signal to ESCs */
+//	    DRONE_ESCSetUp();
 
-  HAL_TIM_Base_Start_IT(&htim8);
-  HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_2);
-  HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_3);
+	    HAL_TIM_Base_Start_IT(&htim8);
+	    HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_2);
+	    HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_3);
 
-  PID_Init(&pitch_controller);
-  PID_Init(&roll_controller);
-  PID_Init(&yaw_controller);
+	    PID_Init(&pitch_controller, 0.0f, 0.0f);
+	    PID_Init(&roll_controller, 60.0f, 100.0f);
+	    PID_Init(&yaw_controller, 0.0f, 0.0f);
 
-  PID_SetParameters(&pitch_controller, 1.0f, 0.0f, 0.0f, 0.0f, angleY);
-  HAL_TIM_Base_Start(&htim5);
+	    PID_SetParameters(&roll_controller, 0.5f, 0.0f, 0.0f, 0.0f, roll);
+	    HAL_TIM_Base_Start(&htim5);
+  }
 
-  MPU6050_GetFullReadings();
+  DRONE_SetStatus(LOCK);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if(angleY > 20.0f){
+	  if(drone.status == UNLOCKING){
+		  DRONE_ESCSetUp();
+		  DRONE_SetStatus(OK);
+	  }
+
+	  if(roll > 20.0f){
 	  		HAL_GPIO_WritePin(LF_LED1_GPIO_Port, LF_LED1_Pin, 1);
 	  		HAL_GPIO_WritePin(RF_LED1_GPIO_Port, RF_LED1_Pin, 0);
 	  	}
-	  	else if(angleY < -20.0f){
+	  	else if(roll < -20.0f){
 	  		HAL_GPIO_WritePin(LF_LED1_GPIO_Port, LF_LED1_Pin, 0);
 	  		HAL_GPIO_WritePin(RF_LED1_GPIO_Port, RF_LED1_Pin, 1);
 	  	}
-	  	else if(angleX < -20.0f){
+	  	else if(pitch < -20.0f){
 	  		HAL_GPIO_WritePin(LF_LED1_GPIO_Port, LF_LED1_Pin, 1);
 	  		HAL_GPIO_WritePin(RF_LED1_GPIO_Port, RF_LED1_Pin, 1);
-	  		DRONE_SetSpeed(MOTOR_LB, 60);
-	  		DRONE_SetSpeed(MOTOR_RB, 60);
-	  		DRONE_SetSpeed(MOTOR_LF, 51);
-	  		DRONE_SetSpeed(MOTOR_RF, 51);
+//	  		DRONE_SetSpeed(MOTOR_LB, 60);
+//	  		DRONE_SetSpeed(MOTOR_RB, 60);
+//	  		DRONE_SetSpeed(MOTOR_LF, 51);
+//	  		DRONE_SetSpeed(MOTOR_RF, 51);
 	  	}
-	  	else if(angleX > 20.0f){
-	  		DRONE_SetSpeed(MOTOR_LB, 51);
-	  		DRONE_SetSpeed(MOTOR_RB, 51);
-	  		DRONE_SetSpeed(MOTOR_LF, 60);
-	  		DRONE_SetSpeed(MOTOR_RF, 60);
+	  	else if(pitch > 20.0f){
+//	  		DRONE_SetSpeed(MOTOR_LB, 51);
+//	  		DRONE_SetSpeed(MOTOR_RB, 51);
+//	  		DRONE_SetSpeed(MOTOR_LF, 60);
+//	  		DRONE_SetSpeed(MOTOR_RF, 60);
 	  	}
 	  	else{
 	  		HAL_GPIO_WritePin(LF_LED1_GPIO_Port, LF_LED1_Pin, 0);
 	  		HAL_GPIO_WritePin(RF_LED1_GPIO_Port, RF_LED1_Pin, 0);
-	  		DRONE_SetSpeed(MOTOR_LB, 50);
-	  		DRONE_SetSpeed(MOTOR_RB, 50);
-	  		DRONE_SetSpeed(MOTOR_LF, 50);
-	  		DRONE_SetSpeed(MOTOR_RF, 50);
+//	  		DRONE_SetSpeed(MOTOR_LB, 50);
+//	  		DRONE_SetSpeed(MOTOR_RB, 50);
+//	  		DRONE_SetSpeed(MOTOR_LF, 50);
+//	  		DRONE_SetSpeed(MOTOR_RF, 50);
 	  	}
 
 	  	//	  	pitch_controller->output = PID_Update(pid, angleY, dt;)
@@ -875,22 +907,16 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, LF_LED2_Pin|RB_LED2_Pin|RB_LED1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOE, LF_LED2_Pin|RB_LED2_Pin|RB_LED1_Pin|LF_LED1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, LED_Pin|RF_LED1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, LED_Pin|RF_LED1_Pin|RF_LED2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LB_LED1_Pin|LB_LED2_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, LB_LED1_Pin|LB_LED2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_SET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(RF_LED2_GPIO_Port, RF_LED2_Pin, GPIO_PIN_SET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LF_LED1_GPIO_Port, LF_LED1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LF_LED2_Pin RB_LED2_Pin RB_LED1_Pin LF_LED1_Pin */
   GPIO_InitStruct.Pin = LF_LED2_Pin|RB_LED2_Pin|RB_LED1_Pin|LF_LED1_Pin;
@@ -929,7 +955,7 @@ static void MX_GPIO_Init(void)
 uint8_t numarray[40];
 
 void sendUART(){
-	sprintf((char*)numarray, "Angle X: %d | Angle Y: %d | Angle Z: %d\n", (int)angleX, (int)angleY, (int)angleZ);
+	sprintf((char*)numarray, "Roll: %d | Pitch: %d | Yaw: %d\n", (int)roll, (int)pitch, (int)angleZ);
 	HAL_UART_Transmit(&huart6, numarray, strlen((char*)numarray), 500);
 }
 
@@ -994,7 +1020,15 @@ void I2C_ResetDataBusToPullUp(I2C_HandleTypeDef *hi2c){
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if(htim->Instance == TIM4){
-	  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+	  if(drone.status == SENSOR_CALIBRATING){
+		  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+	  }
+	  else if(drone.status == SENSOR_CONNECTION_FAULT){
+		  HAL_GPIO_TogglePin(LF_LED1_GPIO_Port, LF_LED1_Pin);
+		  HAL_GPIO_TogglePin(RF_LED1_GPIO_Port, LF_LED1_Pin);
+		  HAL_GPIO_TogglePin(LB_LED2_GPIO_Port, LF_LED1_Pin);
+		  HAL_GPIO_TogglePin(RB_LED2_GPIO_Port, LF_LED1_Pin);
+	  }
   }
 }
 
@@ -1002,19 +1036,14 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if(htim->Instance == TIM8){
 	  if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2){
-//		  c_time = __HAL_TIM_GET_COUNTER(&htim5);
-//	      MPU6050_GetFullReadings();
-//	      duration = c_time - prv_time;
-//	      prv_time = c_time;
-//	      MPU6050_GetFilteredData(0.98);
+//		  prv_time = __HAL_TIM_GET_COUNTER(&htim5);
+		  MPU6050_GetFullReadings();
 	  }
-//	  else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3){
-//		  WT61_CheckProtocolHeader();
-//		  angleZ = WT61_GetYawAngle();
-//	  }
+	  else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3){
+
+	  }
   }
 }
-
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
@@ -1024,12 +1053,22 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		angleZ = WT61_GetYawAngle();
 		WT61_ReceiveDataPacket();
 	}
+	else if(huart->Instance == USART6){
+		GAMEPAD_Update();
+		GAMEPAD_ReceiveData();
+	}
+
 }
 
 void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c){
 	if(hi2c->Instance == hi2c2.Instance){
+//		c_time = __HAL_TIM_GET_COUNTER(&htim5);
 		MPU6050_GetFilteredData(0.98f);
-		MPU6050_GetFullReadings();
+		PID_Update(&roll_controller, roll, 0.001f);
+//		PID_Compute(&roll_controller);
+		DRONE_OnFlight(60);
+//		duration = c_time - prv_time;
+//		prv_time = c_time;
 	}
 }
 
@@ -1060,60 +1099,124 @@ void DRONE_SetStatus(int8_t STATUS){
 	 	 	 	 	 	   (ARR+1)*(PRESCALER+1)
 	 */
 	if(STATUS == SENSOR_CONNECTION_FAULT){
-
-	}
-	else if(STATUS == GAMEPAD_CONNECTION_FAULT){
-
-	}
-	else if(STATUS == ANGLE_STABILITY_FAULT){
-
-	}
-	else if(STATUS == SENSOR_CALIBRATING){
-		/* Toggle LED every 1000 milliseconds */
+		drone.status = SENSOR_CONNECTION_FAULT;
 		HAL_TIM_Base_Stop_IT(&htim4);
 		TIM4->ARR = 8999;
 		TIM4->PSC = 7999;
 		HAL_TIM_Base_Start_IT(&htim4);
 	}
+
+	else if(STATUS == GAMEPAD_CONNECTION_FAULT){
+		drone.status = GAMEPAD_CONNECTION_FAULT;
+	}
+
+	else if(STATUS == ANGLE_STABILITY_FAULT){
+		drone.status = ANGLE_STABILITY_FAULT;
+	}
+
+	else if(STATUS == SENSOR_CALIBRATING){
+		/* Toggle LED every 1000 milliseconds */
+		drone.status = SENSOR_CALIBRATING;
+		HAL_TIM_Base_Stop_IT(&htim4);
+		TIM4->ARR = 8999;
+		TIM4->PSC = 7999;
+		HAL_TIM_Base_Start_IT(&htim4);
+	}
+
 	else if(STATUS == GAMEPAD_DISCOVERY){
 		/* Toggle LED every 250 milliseconds */
+		drone.status = GAMEPAD_DISCOVERY;
 		HAL_TIM_Base_Stop_IT(&htim4);
 		TIM4->ARR = 8999;
 		TIM4->PSC = 1999;
 		HAL_TIM_Base_Start_IT(&htim4);
 	}
+
+	else if(STATUS == LOCK){
+		  drone.status = LOCK;
+		  HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
+		  HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
+		  HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
+		  HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_3);
+	}
+
+	else if(STATUS == UNLOCKING){
+		drone.status = UNLOCKING;
+		HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+		HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+		HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+	}
+
 	else if(STATUS == OK){
 		/* Always turn LED on */
+		drone.status = OK;
 		HAL_TIM_Base_Stop_IT(&htim4);
 		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, 1);
 	}
 }
 
 void DRONE_SetSpeed(uint8_t MOTOR, uint8_t speed){
+	if(speed < 50){
+		speed = 50;
+	}
+	else if(speed > 100){
+		speed = 100;
+	}
+
 	if(MOTOR == MOTOR_LF){
-		if(speed >= 50 && speed <= 100){
-			TIM3->CCR2 = speed;
-		}
+		TIM3->CCR2 = speed;
 	}
 	else if(MOTOR == MOTOR_RF){
-		if(speed >= 50 && speed <= 100){
-			TIM3->CCR1 = speed;
-		}
+		TIM3->CCR1 = speed;
 	}
 	else if(MOTOR == MOTOR_LB){
-		if(speed >= 50 && speed <= 100){
-			TIM3->CCR3 = speed;
-		}
+		TIM3->CCR3 = speed;
 	}
 	else if(MOTOR == MOTOR_RB){
-		if(speed >= 50 && speed <= 100){
-			TIM1->CCR2 = speed;
-		}
+		TIM1->CCR2 = speed;
+	}
+
+}
+
+void DRONE_ReceiveCommand(){
+	if(gamepad.LY > 200 && gamepad.RY > 200){
+		DRONE_SetStatus(UNLOCKING);
 	}
 }
 
-void DRONE_Hover(){
+void DRONE_Hover(uint8_t throttle){
+	DRONE_SetSpeed(MOTOR_LF, throttle);
+	DRONE_SetSpeed(MOTOR_RF, throttle);
+	DRONE_SetSpeed(MOTOR_LB, throttle);
+	DRONE_SetSpeed(MOTOR_RB, throttle);
+}
 
+float DRONE_LimitThrottle(float throttle, float min_limit, float max_limit){
+	if(throttle > max_limit){
+		throttle = max_limit;
+	}
+	else if(throttle < min_limit){
+		throttle = min_limit;
+	}
+
+	return throttle;
+}
+
+void DRONE_OnFlight(uint8_t throttle){
+	roll_output = PID_Compute(&roll_controller);
+	pitch_output = 0.0f;
+	yaw_output = 0.0f;
+
+	drone.MOTOR_RF_SPEED = DRONE_LimitThrottle(throttle + roll_output + pitch_output - yaw_output, 50.0f, 80.0f);
+	drone.MOTOR_LF_SPEED = DRONE_LimitThrottle(throttle - roll_output + pitch_output + yaw_output, 50.0f, 80.0f);
+	drone.MOTOR_RB_SPEED = DRONE_LimitThrottle(throttle + roll_output - pitch_output + yaw_output, 50.0f, 80.0f);
+	drone.MOTOR_LB_SPEED = DRONE_LimitThrottle(throttle - roll_output - pitch_output - yaw_output, 50.0f, 80.0f);
+
+	DRONE_SetSpeed(MOTOR_LF, (uint8_t)drone.MOTOR_LF_SPEED);
+	DRONE_SetSpeed(MOTOR_RF, (uint8_t)drone.MOTOR_RF_SPEED);
+	DRONE_SetSpeed(MOTOR_LB, (uint8_t)drone.MOTOR_LB_SPEED);
+	DRONE_SetSpeed(MOTOR_RB, (uint8_t)drone.MOTOR_RB_SPEED);
 }
 /* USER CODE END 4 */
 

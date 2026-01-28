@@ -1,0 +1,31 @@
+!SESSION 2026-01-28 15:01:16.198 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-01-28 15:01:47.391
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-01-28 15:01:47.393
+!MESSAGE Log4j2 initialized with config file D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-01-28 15:01:51.259
+!MESSAGE Started RMI Server, listening on port 41338
+!SESSION 2026-01-28 15:02:47.683 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-01-28 15:02:53.311
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-01-28 15:02:53.312
+!MESSAGE Log4j2 initialized with config file D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-01-28 15:02:58.129
+!MESSAGE Started RMI Server, listening on port 41337

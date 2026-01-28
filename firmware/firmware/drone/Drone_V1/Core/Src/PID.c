@@ -7,9 +7,9 @@
 
 
 #include "PID.h"
+#include "stdint.h"
 
-
-void PID_Init(PID *pid){
+void PID_Init(PID *pid, float integral_limit, float output_limit){
 
 	/*Clear controller variables*/
 	pid->Kp = 0.0f;
@@ -21,13 +21,13 @@ void PID_Init(PID *pid){
 	pid->prev_error = 0.0f;
 
 	pid->integration = 0.0f;
-	pid->integral_limit = 0.0f;
+	pid->integral_limit = integral_limit;
 
 	pid->differentiation = 0.0f;
 	pid->measurement = 0.0f;
 
 	pid->output = 0.0f;
-	pid->output_limit = 0.0f;
+	pid->output_limit = output_limit;
 }
 
 void PID_SetParameters(PID *pid, float kp, float ki, float kd, float setpoint, float measurement){
@@ -52,6 +52,11 @@ float PID_Compute(PID *pid){
 
 	/*Use 'Trapezoidal Rule' to calculate the cumulative errors */
 	pid->integration += 0.5f * (pid->error + pid->prev_error) * pid->dt;
+
+	/*NOTICE 1: Integration anti-windup*/
+	if(pid->integration >= pid->integral_limit){
+		pid->integration = pid->integral_limit;
+	}
 
 	/*Use Differentiation on Measurement (only depends on measurement, not set-point) */
 	//So, substitute 'z' as measurement for the numerator (not 'error' as normal)
@@ -78,11 +83,6 @@ float PID_Compute(PID *pid){
 	pid->differentiation = numerator / denominator;
 
 	pid->output = pid->propotional * pid->Kp + pid->integration * pid->Ki + pid->differentiation * pid->Kd;
-
-	/*NOTICE 1: Integration anti-windup*/
-	if(pid->integral_limit >= pid->integral_limit){
-		pid->integral_limit = pid->integral_limit;
-	}
 
 	/*NOTICE 2: Clamp controller output*/
 	if (pid->output > pid->output_limit){

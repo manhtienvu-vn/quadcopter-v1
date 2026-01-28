@@ -39,7 +39,7 @@ typedef struct {
 
 } PID;
 
-void PID_Init(PID *pid);
+void PID_Init(PID *pid, float integral_limit, float output_limit);
 void PID_SetParameters(PID *pid, float kp, float ki, float kd, float setpoint, float measurement);
 void PID_Update(PID *pid, float measurement, float dt);
 float PID_Compute(PID *pid);

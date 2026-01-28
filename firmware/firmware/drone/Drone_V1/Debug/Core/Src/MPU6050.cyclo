@@ -3,4 +3,4 @@
 ../Core/Src/MPU6050.c:77:6:MPU6050_GetGyro	1
 ../Core/Src/MPU6050.c:90:6:MPU6050_Calibrate	2
 ../Core/Src/MPU6050.c:113:6:MPU6050_GetFullReadings	1
-../Core/Src/MPU6050.c:139:6:MPU6050_GetFilteredData	1
+../Core/Src/MPU6050.c:117:6:MPU6050_GetFilteredData	1

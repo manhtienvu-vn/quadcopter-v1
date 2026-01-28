@@ -29,7 +29,7 @@ float dt = 0;
 int16_t raw_ax = 0, raw_ay = 0, raw_az = 0, raw_gx = 0, raw_gy = 0, raw_gz = 0;
 float gyroX = 0, gyroY = 0, gyroZ = 0, gyroX_offsets = 0, gyroY_offsets = 0, gyroZ_offsets = 0;
 float accelX = 0, accelY = 0, accelZ = 0, accelX_offsets = 0, accelY_offsets = 0, accelZ_offsets = 0;
-float angleX = 0, angleY = 0;
+float roll = 0, pitch = 0;
 
 uint32_t current_Time = 0;
 uint32_t prev_Time = 0;
@@ -65,8 +65,8 @@ void MPU6050_GetAccel(){
 
 	HAL_I2C_Mem_Read(IMU_HI2C, MPU6050_ADDRESS, 0x3B, 1, accelData, 6, 10);
 
-	raw_ax = (int16_t)(accelData[0] << 8) | (accelData[1]);
-	raw_ay = (int16_t)(accelData[2] << 8) | (accelData[3]);
+	raw_ay = (int16_t)(accelData[0] << 8) | (accelData[1]);
+	raw_ax = (int16_t)(accelData[2] << 8) | (accelData[3]);
 	raw_az = (int16_t)(accelData[4] << 8) | (accelData[5]);
 
 	accelX = (float)raw_ax/16384.0f;
@@ -78,8 +78,8 @@ void MPU6050_GetGyro(){
 	uint8_t gyroData[6];
 	HAL_I2C_Mem_Read(IMU_HI2C, MPU6050_ADDRESS, 0x43, 1, gyroData, 6, 10);
 
-	raw_gx = (int16_t)(gyroData[0] << 8) | (gyroData[1]);
-	raw_gy = (int16_t)(gyroData[2] << 8) | (gyroData[3]);
+	raw_gy = (int16_t)(gyroData[0] << 8) | (gyroData[1]);
+	raw_gx = (int16_t)(gyroData[2] << 8) | (gyroData[3]);
 	raw_gz = (int16_t)(gyroData[4] << 8) | (gyroData[5]);
 
 	gyroX = (float)raw_gx/131.0f ;
@@ -111,42 +111,20 @@ void MPU6050_Calibrate(uint16_t duration){
 }
 
 void MPU6050_GetFullReadings(){
-//	uint8_t accelBuffer[6];
-////	HAL_I2C_Mem_Read(IMU_HI2C, MPU6050_ADDRESS, MPU6050_ACCEL_OUT_REGISTER, 1, accelBuffer, 6, 10);
-//	HAL_I2C_Mem_Read_DMA(IMU_HI2C, MPU6050_ADDRESS, MPU6050_ACCEL_OUT_REGISTER, 1, accelBuffer, 6);
-//	raw_ax = (int16_t)(accelBuffer[0] << 8) | (accelBuffer[1]);
-//	raw_ay = (int16_t)(accelBuffer[2] << 8) | (accelBuffer[3]);
-//	raw_az = (int16_t)(accelBuffer[4] << 8) | (accelBuffer[5]);
-//
-//	accelX = ((float)raw_ax/TEMP_LSB_OFFSET) - accelX_offsets;
-//	accelY = ((float)raw_ay/TEMP_LSB_OFFSET) - accelY_offsets;
-//	accelZ = ((float)raw_az/TEMP_LSB_OFFSET);
-//	//-------------------------------------------------------------------------------------------------------
-//	uint8_t gyroBuffer[6];
-////	HAL_I2C_Mem_Read(IMU_HI2C, MPU6050_ADDRESS, MPU6050_GYRO_OUT_REGISTER, 1, gyroBuffer, 6, 10);
-//	HAL_I2C_Mem_Read_DMA(IMU_HI2C, MPU6050_ADDRESS, MPU6050_GYRO_OUT_REGISTER, 1, gyroBuffer, 6);
-//
-//	raw_gx = (int16_t)(gyroBuffer[0] << 8) | (gyroBuffer[1]);
-//	raw_gy = (int16_t)(gyroBuffer[2] << 8) | (gyroBuffer[3]);
-//	raw_gz = (int16_t)(gyroBuffer[4] << 8) | (gyroBuffer[5]);
-//
-//	gyroX = ((float)raw_gx/TEMP_LSB_2_DEGREE)- gyroX_offsets;
-//	gyroY = ((float)raw_gy/TEMP_LSB_2_DEGREE)- gyroY_offsets;
-//	gyroZ = ((float)raw_gz/TEMP_LSB_2_DEGREE)- gyroZ_offsets;
 	HAL_I2C_Mem_Read_DMA(IMU_HI2C, MPU6050_ADDRESS, MPU6050_ACCEL_OUT_REGISTER, 1, buffer, 14);
 }
 
 void MPU6050_GetFilteredData(float filterGyroCoef){
-	raw_ax = (int16_t)(buffer[0] << 8) | (buffer[1]);
-	raw_ay = (int16_t)(buffer[2] << 8) | (buffer[3]);
+	raw_ay = (int16_t)(buffer[0] << 8) | (buffer[1]);
+	raw_ax = (int16_t)(buffer[2] << 8) | (buffer[3]);
 	raw_az = (int16_t)(buffer[4] << 8) | (buffer[5]);
 
 	accelX = ((float)raw_ax/TEMP_LSB_OFFSET) - accelX_offsets;
 	accelY = ((float)raw_ay/TEMP_LSB_OFFSET) - accelY_offsets;
 	accelZ = ((float)raw_az/TEMP_LSB_OFFSET);
 
-	raw_gx = (int16_t)(buffer[8] << 8) | (buffer[9]);
-	raw_gy = (int16_t)(buffer[10] << 8) | (buffer[11]);
+	raw_gy = (int16_t)(buffer[8] << 8) | (buffer[9]);
+	raw_gx = (int16_t)(buffer[10] << 8) | (buffer[11]);
 	raw_gz = (int16_t)(buffer[12] << 8) | (buffer[13]);
 
 	gyroX = ((float)raw_gx/TEMP_LSB_2_DEGREE)- gyroX_offsets;
@@ -159,13 +137,13 @@ void MPU6050_GetFilteredData(float filterGyroCoef){
 	dt = (dt)/1000000.0f;
 	prev_Time = current_Time;
 
-	float newAngleXGyro = angleX + (gyroX)*(dt);
-	float newAngleYGyro = angleY + (gyroY)*(dt);
+	float newRollGyro = roll + (gyroX)*(dt);
+	float newPitchGyro = pitch + (gyroY)*(dt);
 
-	float newAngleXAccel = atan2f(accelY, sqrtf(accelX*accelX + accelZ*accelZ)) * RAD_2_DEG;
-	float newAngleYAccel = atan2f(accelX, sqrtf(accelY*accelY + accelZ*accelZ)) * RAD_2_DEG;
+	float newRollAccel = atan2f(accelY, sqrtf(accelX*accelX + accelZ*accelZ)) * RAD_2_DEG;
+	float newPitchAccel = atan2f(accelX, sqrtf(accelY*accelY + accelZ*accelZ)) * RAD_2_DEG;
 
-	angleX = (filterGyroCoef)*newAngleXGyro + (1.0f-(filterGyroCoef))*newAngleXAccel;
-	angleY = (filterGyroCoef)*newAngleYGyro + (1.0f-(filterGyroCoef))*newAngleYAccel;
+	roll = (filterGyroCoef)*newRollGyro + (1.0f-(filterGyroCoef))*newRollAccel;
+	pitch = (filterGyroCoef)*newPitchGyro + (1.0f-(filterGyroCoef))*newPitchAccel;
 //	angleZ += (gyroZ)*(dt);
 }
