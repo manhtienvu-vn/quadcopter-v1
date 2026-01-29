@@ -27,6 +27,7 @@
 #include "GAMEPAD.h"
 #include "stdio.h"
 #include "string.h"
+#include "math.h"
 
 /* USER CODE END Includes */
 
@@ -73,6 +74,7 @@ typedef struct {
 	uint8_t MOTOR_RB_SPEED;
 	uint8_t throttle;
 	uint8_t status;
+	uint8_t last_speed_up;
 } DroneParameters;
 
 DroneParameters drone;
@@ -108,12 +110,14 @@ TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 TIM_HandleTypeDef htim5;
 TIM_HandleTypeDef htim8;
+TIM_HandleTypeDef htim9;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart6;
 DMA_HandleTypeDef hdma_usart1_rx;
 DMA_HandleTypeDef hdma_usart2_rx;
+DMA_HandleTypeDef hdma_usart6_rx;
 
 /* USER CODE BEGIN PV */
 /* USER CODE END PV */
@@ -133,6 +137,7 @@ static void MX_TIM4_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM5_Init(void);
 static void MX_TIM8_Init(void);
+static void MX_TIM9_Init(void);
 /* USER CODE BEGIN PFP */
 /* USER CODE END PFP */
 
@@ -198,6 +203,7 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM5_Init();
   MX_TIM8_Init();
+  MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim2);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
@@ -225,7 +231,7 @@ int main(void)
 
 	    DRONE_SetStatus(OK);
 	    /* Send 'START' signal to ESCs */
-//	    DRONE_ESCSetUp();
+	    DRONE_ESCSetUp();
 
 	    HAL_TIM_Base_Start_IT(&htim8);
 	    HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_2);
@@ -237,9 +243,13 @@ int main(void)
 
 	    PID_SetParameters(&roll_controller, 0.5f, 0.0f, 0.0f, 0.0f, roll);
 	    HAL_TIM_Base_Start(&htim5);
+
+	    GAMEPAD_Init(&huart6);
+	    GAMEPAD_ReceiveData();
+	    DRONE_SetStatus(LOCK);
+
   }
 
-  DRONE_SetStatus(LOCK);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -766,6 +776,44 @@ static void MX_TIM8_Init(void)
 }
 
 /**
+  * @brief TIM9 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM9_Init(void)
+{
+
+  /* USER CODE BEGIN TIM9_Init 0 */
+
+  /* USER CODE END TIM9_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+
+  /* USER CODE BEGIN TIM9_Init 1 */
+
+  /* USER CODE END TIM9_Init 1 */
+  htim9.Instance = TIM9;
+  htim9.Init.Prescaler = 7199;
+  htim9.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim9.Init.Period = 65535;
+  htim9.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim9.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim9) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim9, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM9_Init 2 */
+
+  /* USER CODE END TIM9_Init 2 */
+
+}
+
+/**
   * @brief USART1 Initialization Function
   * @param None
   * @retval None
@@ -881,6 +929,9 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream5_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
+  /* DMA2_Stream1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream1_IRQn);
   /* DMA2_Stream2_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
@@ -1055,6 +1106,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	}
 	else if(huart->Instance == USART6){
 		GAMEPAD_Update();
+		DRONE_ReceiveCommand();
 		GAMEPAD_ReceiveData();
 	}
 
@@ -1066,7 +1118,7 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c){
 		MPU6050_GetFilteredData(0.98f);
 		PID_Update(&roll_controller, roll, 0.001f);
 //		PID_Compute(&roll_controller);
-		DRONE_OnFlight(60);
+//		DRONE_OnFlight(60);
 //		duration = c_time - prv_time;
 //		prv_time = c_time;
 	}
@@ -1181,8 +1233,48 @@ void DRONE_SetSpeed(uint8_t MOTOR, uint8_t speed){
 
 void DRONE_ReceiveCommand(){
 	if(gamepad.LY > 200 && gamepad.RY > 200){
-		DRONE_SetStatus(UNLOCKING);
+		if(drone.status == LOCK){
+			DRONE_SetStatus(UNLOCKING);
+		}
 	}
+
+	if(drone.status == OK){
+
+		if(gamepad.L1 && gamepad.R1){
+			if(drone.last_speed_up == 0){
+				__HAL_TIM_SET_COUNTER(&htim9, 0);
+				HAL_TIM_Base_Start(&htim9);
+				duration = __HAL_TIM_GET_COUNTER(&htim9);
+				drone.last_speed_up = 1;
+			}
+			if(drone.last_speed_up == 1){
+				duration = __HAL_TIM_GET_COUNTER(&htim9);
+				if(duration > 10000){
+					drone.throttle += 1;
+					drone.last_speed_up = 0;
+					HAL_TIM_Base_Stop(&htim9);
+					gamepad.L1 = 0;
+					gamepad.R1 = 0;
+				}
+
+			}
+
+
+		}
+		else{
+			if(drone.last_speed_up == 1 && duration < 1000){
+				drone.last_speed_up = 0;
+				HAL_TIM_Base_Stop(&htim9);
+			}
+		}
+
+		if(gamepad.L2 && gamepad.R2){
+			drone.throttle -= 1;
+			gamepad.L2 = 0;
+			gamepad.R2 = 0;
+		}
+	}
+
 }
 
 void DRONE_Hover(uint8_t throttle){
@@ -1208,10 +1300,10 @@ void DRONE_OnFlight(uint8_t throttle){
 	pitch_output = 0.0f;
 	yaw_output = 0.0f;
 
-	drone.MOTOR_RF_SPEED = DRONE_LimitThrottle(throttle + roll_output + pitch_output - yaw_output, 50.0f, 80.0f);
-	drone.MOTOR_LF_SPEED = DRONE_LimitThrottle(throttle - roll_output + pitch_output + yaw_output, 50.0f, 80.0f);
-	drone.MOTOR_RB_SPEED = DRONE_LimitThrottle(throttle + roll_output - pitch_output + yaw_output, 50.0f, 80.0f);
-	drone.MOTOR_LB_SPEED = DRONE_LimitThrottle(throttle - roll_output - pitch_output - yaw_output, 50.0f, 80.0f);
+	drone.MOTOR_LF_SPEED = DRONE_LimitThrottle(throttle + roll_output + pitch_output - yaw_output, 50.0f, 80.0f);
+	drone.MOTOR_RF_SPEED = DRONE_LimitThrottle(throttle - roll_output + pitch_output + yaw_output, 50.0f, 80.0f);
+	drone.MOTOR_LB_SPEED = DRONE_LimitThrottle(throttle + roll_output - pitch_output + yaw_output, 50.0f, 80.0f);
+	drone.MOTOR_RB_SPEED = DRONE_LimitThrottle(throttle - roll_output - pitch_output - yaw_output, 50.0f, 80.0f);
 
 	DRONE_SetSpeed(MOTOR_LF, (uint8_t)drone.MOTOR_LF_SPEED);
 	DRONE_SetSpeed(MOTOR_RF, (uint8_t)drone.MOTOR_RF_SPEED);

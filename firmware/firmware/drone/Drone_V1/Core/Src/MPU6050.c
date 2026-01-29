@@ -65,8 +65,8 @@ void MPU6050_GetAccel(){
 
 	HAL_I2C_Mem_Read(IMU_HI2C, MPU6050_ADDRESS, 0x3B, 1, accelData, 6, 10);
 
-	raw_ay = (int16_t)(accelData[0] << 8) | (accelData[1]);
-	raw_ax = (int16_t)(accelData[2] << 8) | (accelData[3]);
+	raw_ax = (int16_t)(accelData[0] << 8) | (accelData[1]);
+	raw_ay = (int16_t)(accelData[2] << 8) | (accelData[3]);
 	raw_az = (int16_t)(accelData[4] << 8) | (accelData[5]);
 
 	accelX = (float)raw_ax/16384.0f;
@@ -78,8 +78,8 @@ void MPU6050_GetGyro(){
 	uint8_t gyroData[6];
 	HAL_I2C_Mem_Read(IMU_HI2C, MPU6050_ADDRESS, 0x43, 1, gyroData, 6, 10);
 
-	raw_gy = (int16_t)(gyroData[0] << 8) | (gyroData[1]);
-	raw_gx = (int16_t)(gyroData[2] << 8) | (gyroData[3]);
+	raw_gx = (int16_t)(gyroData[0] << 8) | (gyroData[1]);
+	raw_gy = (int16_t)(gyroData[2] << 8) | (gyroData[3]);
 	raw_gz = (int16_t)(gyroData[4] << 8) | (gyroData[5]);
 
 	gyroX = (float)raw_gx/131.0f ;
@@ -115,16 +115,16 @@ void MPU6050_GetFullReadings(){
 }
 
 void MPU6050_GetFilteredData(float filterGyroCoef){
-	raw_ay = (int16_t)(buffer[0] << 8) | (buffer[1]);
-	raw_ax = (int16_t)(buffer[2] << 8) | (buffer[3]);
+	raw_ax = (int16_t)(buffer[0] << 8) | (buffer[1]);
+	raw_ay = (int16_t)(buffer[2] << 8) | (buffer[3]);
 	raw_az = (int16_t)(buffer[4] << 8) | (buffer[5]);
 
 	accelX = ((float)raw_ax/TEMP_LSB_OFFSET) - accelX_offsets;
 	accelY = ((float)raw_ay/TEMP_LSB_OFFSET) - accelY_offsets;
 	accelZ = ((float)raw_az/TEMP_LSB_OFFSET);
 
-	raw_gy = (int16_t)(buffer[8] << 8) | (buffer[9]);
-	raw_gx = (int16_t)(buffer[10] << 8) | (buffer[11]);
+	raw_gx = (int16_t)(buffer[8] << 8) | (buffer[9]);
+	raw_gy = (int16_t)(buffer[10] << 8) | (buffer[11]);
 	raw_gz = (int16_t)(buffer[12] << 8) | (buffer[13]);
 
 	gyroX = ((float)raw_gx/TEMP_LSB_2_DEGREE)- gyroX_offsets;

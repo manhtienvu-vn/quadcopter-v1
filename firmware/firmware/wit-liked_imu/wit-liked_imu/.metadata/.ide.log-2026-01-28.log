@@ -1,0 +1,19 @@
+2026-01-29 10:04:18,815 [INFO] WebApp:194 - Connection lost
+2026-01-29 10:04:19,102 [INFO] WebApp:191 - Connection restablished
+2026-01-29 10:04:20,493 [INFO] WebApp:194 - Connection lost
+2026-01-29 10:04:20,727 [INFO] WebApp:191 - Connection restablished
+2026-01-29 10:08:45,350 [INFO] WebApp:194 - Connection lost
+2026-01-29 10:08:45,545 [INFO] WebApp:191 - Connection restablished
+2026-01-29 10:13:52,302 [INFO] WebApp:194 - Connection lost
+2026-01-29 10:13:52,721 [INFO] WebApp:191 - Connection restablished
+2026-01-29 10:14:08,353 [INFO] WebApp:194 - Connection lost
+2026-01-29 10:14:08,499 [INFO] WebApp:191 - Connection restablished
+2026-01-29 10:36:15,829 [INFO] WebApp:194 - Connection lost
+2026-01-29 10:36:16,149 [INFO] WebApp:191 - Connection restablished
+2026-01-29 16:14:42,216 [INFO] WebApp:194 - Connection lost
+2026-01-29 16:14:42,736 [INFO] WebApp:191 - Connection restablished
+2026-01-29 17:11:30,714 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 17:11:30,714 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 17:11:30,715 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 17:11:30,715 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 17:11:30,818 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]

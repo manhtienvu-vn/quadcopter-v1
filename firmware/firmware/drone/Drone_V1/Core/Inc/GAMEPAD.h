@@ -8,10 +8,10 @@ typedef struct {
 	uint8_t DOWN;
 	uint8_t LEFT;
 	uint8_t RIGHT;
-	uint8_t TRIANGLE;
-	uint8_t CIRCLE;
-	uint8_t CROSS;
-	uint8_t SQUARE;
+	uint8_t A;
+	uint8_t B;
+	uint8_t X;
+	uint8_t Y;
 	uint8_t L1;
 	uint8_t L2;
 	uint8_t R1;
@@ -27,6 +27,6 @@ typedef struct {
 
 void GAMEPAD_Init(UART_HandleTypeDef *huart);
 void GAMEPAD_ReceiveData();
-void GAMPEPAD_Update();
+void GAMEPAD_Update();
 
 #endif /* INC_GAMEPAD_H_ */

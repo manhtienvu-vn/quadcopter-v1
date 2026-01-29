@@ -16,19 +16,21 @@ void GAMEPAD_Init(UART_HandleTypeDef *huart){
 }
 
 void GAMEPAD_Update(){
-	gamepad.UP = gamepad.buffer[0] & (1 << 7);
-	gamepad.DOWN = gamepad.buffer[0] & (1 << 6);
-	gamepad.LEFT = gamepad.buffer[0] & (1 << 5);
-	gamepad.RIGHT = gamepad.buffer[0] & (1 << 4);
-	gamepad.TRIANGLE = gamepad.buffer[0] & (1 << 3);
-	gamepad.CROSS = gamepad.buffer[0] & (1 << 2);
-	gamepad.CIRCLE = gamepad.buffer[0] & (1 << 1);
-	gamepad.SQUARE = gamepad.buffer[0] & (1 << 0);
 
-	gamepad.L1 = gamepad.buffer[1] & (1 << 7);
-	gamepad.L2 = gamepad.buffer[1] & (1 << 6);
-	gamepad.R1 = gamepad.buffer[1] & (1 << 5);
-	gamepad.R2 = gamepad.buffer[1] & (1 << 4);
+	gamepad.A = gamepad.buffer[0] & (1 << 0);
+	gamepad.B = gamepad.buffer[0] & (1 << 1);
+	gamepad.X = gamepad.buffer[0] & (1 << 2);
+	gamepad.Y = gamepad.buffer[0] & (1 << 3);
+
+	gamepad.UP = gamepad.buffer[0] & (1 << 4);
+	gamepad.DOWN = gamepad.buffer[0] & (1 << 5);
+	gamepad.LEFT = gamepad.buffer[0] & (1 << 6);
+	gamepad.RIGHT = gamepad.buffer[0] & (1 << 7);
+
+	gamepad.L1 = gamepad.buffer[1] & (1 << 3);
+	gamepad.R1 = gamepad.buffer[1] & (1 << 2);
+	gamepad.L2 = gamepad.buffer[1] & (1 << 1);
+	gamepad.R2 = gamepad.buffer[1] & (1 << 0);
 
 	gamepad.LX = gamepad.buffer[2];
 	gamepad.LY = gamepad.buffer[3];
