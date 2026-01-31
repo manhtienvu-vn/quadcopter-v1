@@ -1,0 +1,98 @@
+/*
+ * PID.c
+ *
+ *  Created on: Jan 24, 2026
+ *      Author: ADMIN
+ */
+
+
+#include "PID.h"
+#include "stdint.h"
+
+void PID_Init(PID *pid, float integral_limit, float output_limit){
+
+	/*Clear controller variables*/
+	pid->Kp = 0.0f;
+	pid->Ki = 0.0f;
+	pid->Kd = 0.0f;
+	pid->tau = 0.0f;
+
+	pid->error = 0.0f;
+	pid->prev_error = 0.0f;
+
+	pid->integration = 0.0f;
+	pid->integral_limit = integral_limit;
+
+	pid->differentiation = 0.0f;
+	pid->measurement = 0.0f;
+
+	pid->output = 0.0f;
+	pid->output_limit = output_limit;
+}
+
+void PID_SetParameters(PID *pid, float kp, float ki, float kd, float setpoint, float measurement){
+	pid->Kp = kp;
+	pid->Ki = ki;
+	pid->Kd = kd;
+	pid->setpoint = setpoint;
+	pid->measurement = measurement;
+}
+
+void PID_Update(PID *pid, float measurement, float dt){
+	pid->measurement = measurement;
+	pid->dt = dt;
+	pid->tau = 5.0f * pid->dt;
+}
+
+float PID_Compute(PID *pid){
+
+	pid->error = pid->measurement - pid->setpoint;
+
+	pid->propotional = pid->error;
+
+	/*Use 'Trapezoidal Rule' to calculate the cumulative errors */
+	pid->integration += 0.5f * (pid->error + pid->prev_error) * pid->dt;
+
+	/*NOTICE 1: Integration anti-windup*/
+	if(pid->integration >= pid->integral_limit){
+		pid->integration = pid->integral_limit;
+	}
+
+	/*Use Differentiation on Measurement (only depends on measurement, not set-point) */
+	//So, substitute 'z' as measurement for the numerator (not 'error' as normal)
+
+	/* Tustin Method: D =          2.Kd.(z-1)
+	                         ---------------------- * M
+	                         2.tau.(z-1) + dt.(z-1)
+
+	+) With: D(differentiation: OUTPUT) basing on M(measurement: INPUT)
+
+	Step 1: M(z-1) = M_new - M_old
+
+	Step 2: D.(z-1) = D_new - D_old   ;   D(z+1) = D_new + D_old
+
+	Step 3: Conclude: D_new.(2.tau+T) + D_old.(dt-2.tau) = 2.Kd.(M_new - M_old)
+
+	->  D_new =  2.Kd.(M_new - M_old) + (2.tau - dt).D_old
+	            ------------------------------------------
+	                           2.tau + dt
+	*/
+
+	float numerator = 2.0f * (pid->measurement - pid->prev_measurement) + (2.0f * pid->tau - pid->dt)*pid->differentiation;
+	float denominator = 2.0f * pid->tau + pid->dt;
+	pid->differentiation = numerator / denominator;
+
+	pid->output = pid->propotional * pid->Kp + pid->integration * pid->Ki + pid->differentiation * pid->Kd;
+
+	/*NOTICE 2: Clamp controller output*/
+	if (pid->output > pid->output_limit){
+		pid->output = pid->output_limit;
+	}
+
+	/*Update previous error as current error for future computation*/
+	pid->prev_measurement = pid->measurement;
+	pid->prev_error = pid->error;
+
+	return pid->output;
+}
+

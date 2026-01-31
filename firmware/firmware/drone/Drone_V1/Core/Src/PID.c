@@ -41,17 +41,17 @@ void PID_SetParameters(PID *pid, float kp, float ki, float kd, float setpoint, f
 void PID_Update(PID *pid, float measurement, float dt){
 	pid->measurement = measurement;
 	pid->dt = dt;
-	pid->tau = 5.0f * pid->dt;
+	pid->tau = 50.0f * pid->dt;
 }
 
 float PID_Compute(PID *pid){
 
-	pid->error = pid->measurement - pid->setpoint;
+	pid->error = pid->setpoint - pid->measurement;
 
-	pid->propotional = pid->error;
+	pid->propotional = pid->error * pid->Kp;
 
 	/*Use 'Trapezoidal Rule' to calculate the cumulative errors */
-	pid->integration += 0.5f * (pid->error + pid->prev_error) * pid->dt;
+	pid->integration += 0.5f * (pid->error + pid->prev_error) * pid->dt * pid->Ki;
 
 	/*NOTICE 1: Integration anti-windup*/
 	if(pid->integration >= pid->integral_limit){
@@ -78,11 +78,11 @@ float PID_Compute(PID *pid){
 	                           2.tau + dt
 	*/
 
-	float numerator = 2.0f * (pid->measurement - pid->prev_measurement) + (2.0f * pid->tau - pid->dt)*pid->differentiation;
+	float numerator = -(2.0f * pid->Kd* (pid->measurement - pid->prev_measurement) + (2.0f * pid->tau - pid->dt)*pid->differentiation);
 	float denominator = 2.0f * pid->tau + pid->dt;
-	pid->differentiation = numerator / denominator;
+	pid->differentiation = (numerator / denominator);
 
-	pid->output = pid->propotional * pid->Kp + pid->integration * pid->Ki + pid->differentiation * pid->Kd;
+	pid->output = pid->propotional + pid->integration + pid->differentiation;
 
 	/*NOTICE 2: Clamp controller output*/
 	if (pid->output > pid->output_limit){

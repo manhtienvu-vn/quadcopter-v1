@@ -12,34 +12,38 @@ GAMEPAD gamepad;
 
 void GAMEPAD_Init(UART_HandleTypeDef *huart){
 	gamepad.huart = huart;
-	HAL_UART_Receive_DMA(gamepad.huart, gamepad.buffer, 6);
+	HAL_UART_Receive_DMA(gamepad.huart, gamepad.buffer, 7);
 }
 
 void GAMEPAD_Update(){
 
-	gamepad.A = gamepad.buffer[0] & (1 << 0);
-	gamepad.B = gamepad.buffer[0] & (1 << 1);
-	gamepad.X = gamepad.buffer[0] & (1 << 2);
-	gamepad.Y = gamepad.buffer[0] & (1 << 3);
+	gamepad.A = (gamepad.buffer[0] >> 0 ) & (0b00000001);
+	gamepad.B = (gamepad.buffer[0] >> 1) & (0b00000001);
+	gamepad.X = (gamepad.buffer[0] >> 2) & (0b00000001);
+	gamepad.Y = (gamepad.buffer[0] >> 3) & (0b00000001);
 
-	gamepad.UP = gamepad.buffer[0] & (1 << 4);
-	gamepad.DOWN = gamepad.buffer[0] & (1 << 5);
-	gamepad.LEFT = gamepad.buffer[0] & (1 << 6);
-	gamepad.RIGHT = gamepad.buffer[0] & (1 << 7);
+	gamepad.UP = (gamepad.buffer[0] >> 4) & (0b00000001);
+	gamepad.DOWN = (gamepad.buffer[0] >> 5) & (0b00000001);
+	gamepad.LEFT = (gamepad.buffer[0] >> 6) & (0b00000001);
+	gamepad.RIGHT = (gamepad.buffer[0] >> 7) & (0b00000001);
 
-	gamepad.L1 = gamepad.buffer[1] & (1 << 3);
-	gamepad.R1 = gamepad.buffer[1] & (1 << 2);
-	gamepad.L2 = gamepad.buffer[1] & (1 << 1);
-	gamepad.R2 = gamepad.buffer[1] & (1 << 0);
+	gamepad.R_SELECT = (gamepad.buffer[1] >> 4) & (0b00000001);
+	gamepad.L1 = (gamepad.buffer[1] >> 3) & (0b00000001);
+	gamepad.R1 = (gamepad.buffer[1] >> 2) & (0b00000001);
+	gamepad.L2 = (gamepad.buffer[1] >> 1) & (0b00000001);
+	gamepad.R2 = (gamepad.buffer[1] >> 0) & (0b00000001);
 
 	gamepad.LX = gamepad.buffer[2];
 	gamepad.LY = gamepad.buffer[3];
 	gamepad.RX = gamepad.buffer[4];
 	gamepad.RY = gamepad.buffer[5];
+
+	uint8_t received_kp = gamepad.buffer[6];
+	gamepad.KP = (float)received_kp/100.0f;
 }
 
 void GAMEPAD_ReceiveData(){
-	HAL_UART_Receive_DMA(gamepad.huart, gamepad.buffer, 6);
+	HAL_UART_Receive_DMA(gamepad.huart, gamepad.buffer, 7);
 }
 
 

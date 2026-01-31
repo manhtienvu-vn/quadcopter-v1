@@ -1,0 +1,814 @@
+2026-01-29 17:11:36,738 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.Error: no ComponentUI class for: com.st.microxplorer.plugins.ip.nvic.CheckBoxHeader[,0,0,0x0,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=null,paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=false,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=]
+2026-01-29 17:11:36,748 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.UIDefaults.getUIError(UIDefaults.java:763)
+2026-01-29 17:11:36,750 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.MultiUIDefaults.getUIError(MultiUIDefaults.java:144)
+2026-01-29 17:11:36,751 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.UIDefaults.getUI(UIDefaults.java:793)
+2026-01-29 17:11:36,752 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.UIManager.getUI(UIManager.java:1070)
+2026-01-29 17:11:36,753 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.JCheckBox.updateUI(JCheckBox.java:228)
+2026-01-29 17:11:36,754 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.AbstractButton.init(AbstractButton.java:2141)
+2026-01-29 17:11:36,755 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.JToggleButton.<init>(JToggleButton.java:187)
+2026-01-29 17:11:36,755 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.JCheckBox.<init>(JCheckBox.java:176)
+2026-01-29 17:11:36,756 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.JCheckBox.<init>(JCheckBox.java:97)
+2026-01-29 17:11:36,757 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.CheckBoxHeader.<init>(CheckBoxHeader.java:55)
+2026-01-29 17:11:36,758 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.NvicCodeSelectionTable.<init>(NvicCodeSelectionTable.java:75)
+2026-01-29 17:11:36,760 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.NvicCodePanel.initComponents(NvicCodePanel.java:102)
+2026-01-29 17:11:36,762 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.NvicCodePanel.<init>(NvicCodePanel.java:78)
+2026-01-29 17:11:36,763 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.NvicTabbedPanel.<init>(NvicTabbedPanel.java:57)
+2026-01-29 17:11:36,764 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.Nvic.getUI(Nvic.java:73)
+2026-01-29 17:11:36,765 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ipmanager.gui.BlockDiagram.createIpPanel(BlockDiagram.java:402)
+2026-01-29 17:11:36,767 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ipmanager.gui.BlockDiagram.getIPConfigPanel(BlockDiagram.java:552)
+2026-01-29 17:11:36,768 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ipmanager.gui.BlockDiagram.getIPConfigPanel(BlockDiagram.java:458)
+2026-01-29 17:11:36,769 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ipmanager.gui.BlockDiagram.propertyChange(BlockDiagram.java:1389)
+2026-01-29 17:11:36,770 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:343)
+2026-01-29 17:11:36,772 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:335)
+2026-01-29 17:11:36,773 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:268)
+2026-01-29 17:11:36,774 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.util.MXPropertyChangeSupport.firePropertyChange(MXPropertyChangeSupport.java:54)
+2026-01-29 17:11:36,775 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.mxsystem.MxSystem.firePropertyChange(MxSystem.java:357)
+2026-01-29 17:11:36,776 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.pinoutconfig.guiV5.PeripheralsSelectionPanel.selectIP(PeripheralsSelectionPanel.java:409)
+2026-01-29 17:11:36,778 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.pinoutconfig.guiV5.PeripheralsListListener.mouseClicked(PeripheralsListListener.java:103)
+2026-01-29 17:11:36,779 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.AWTEventMulticaster.mouseClicked(AWTEventMulticaster.java:278)
+2026-01-29 17:11:36,780 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6624)
+2026-01-29 17:11:36,782 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3398)
+2026-01-29 17:11:36,783 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Component.processEvent(Component.java:6386)
+2026-01-29 17:11:36,784 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+2026-01-29 17:11:36,785 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4996)
+2026-01-29 17:11:36,786 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+2026-01-29 17:11:36,786 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+2026-01-29 17:11:36,788 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
+2026-01-29 17:11:36,789 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4584)
+2026-01-29 17:11:36,790 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
+2026-01-29 17:11:36,791 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+2026-01-29 17:11:36,792 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+2026-01-29 17:11:36,793 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+2026-01-29 17:11:36,794 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+2026-01-29 17:11:36,795 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+2026-01-29 17:11:36,796 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+2026-01-29 17:11:36,797 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+2026-01-29 17:11:36,799 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:98)
+2026-01-29 17:11:36,800 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+2026-01-29 17:11:36,801 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+2026-01-29 17:11:36,802 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+2026-01-29 17:11:36,803 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+2026-01-29 17:11:36,805 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+2026-01-29 17:11:36,806 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+2026-01-29 17:11:36,808 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+2026-01-29 17:11:36,809 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+2026-01-29 17:11:36,810 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+2026-01-29 17:11:36,811 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+2026-01-29 17:11:36,812 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2026-01-29 17:11:36,817 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] java.lang.Error: no ComponentUI class for: com.st.microxplorer.plugins.ip.nvic.CheckBoxHeader[,0,0,0x0,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=null,paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=false,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=]
+2026-01-29 17:11:36,818 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.UIDefaults.getUIError(UIDefaults.java:763)
+2026-01-29 17:11:36,819 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.MultiUIDefaults.getUIError(MultiUIDefaults.java:144)
+2026-01-29 17:11:36,820 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.UIDefaults.getUI(UIDefaults.java:793)
+2026-01-29 17:11:36,821 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.UIManager.getUI(UIManager.java:1070)
+2026-01-29 17:11:36,822 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.JCheckBox.updateUI(JCheckBox.java:228)
+2026-01-29 17:11:36,823 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.AbstractButton.init(AbstractButton.java:2141)
+2026-01-29 17:11:36,824 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.JToggleButton.<init>(JToggleButton.java:187)
+2026-01-29 17:11:36,825 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.JCheckBox.<init>(JCheckBox.java:176)
+2026-01-29 17:11:36,825 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.JCheckBox.<init>(JCheckBox.java:97)
+2026-01-29 17:11:36,827 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.CheckBoxHeader.<init>(CheckBoxHeader.java:55)
+2026-01-29 17:11:36,828 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.NvicCodeSelectionTable.<init>(NvicCodeSelectionTable.java:78)
+2026-01-29 17:11:36,829 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.NvicCodePanel.initComponents(NvicCodePanel.java:102)
+2026-01-29 17:11:36,830 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.NvicCodePanel.<init>(NvicCodePanel.java:78)
+2026-01-29 17:11:36,831 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.NvicTabbedPanel.<init>(NvicTabbedPanel.java:57)
+2026-01-29 17:11:36,832 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ip.nvic.Nvic.getUI(Nvic.java:73)
+2026-01-29 17:11:36,833 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ipmanager.gui.BlockDiagram.createIpPanel(BlockDiagram.java:402)
+2026-01-29 17:11:36,835 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ipmanager.gui.BlockDiagram.getIPConfigPanel(BlockDiagram.java:552)
+2026-01-29 17:11:36,836 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ipmanager.gui.BlockDiagram.getIPConfigPanel(BlockDiagram.java:458)
+2026-01-29 17:11:36,837 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.ipmanager.gui.BlockDiagram.propertyChange(BlockDiagram.java:1389)
+2026-01-29 17:11:36,838 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:343)
+2026-01-29 17:11:36,840 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:335)
+2026-01-29 17:11:36,841 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:268)
+2026-01-29 17:11:36,843 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.util.MXPropertyChangeSupport.firePropertyChange(MXPropertyChangeSupport.java:54)
+2026-01-29 17:11:36,844 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.mxsystem.MxSystem.firePropertyChange(MxSystem.java:357)
+2026-01-29 17:11:36,845 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.pinoutconfig.guiV5.PeripheralsSelectionPanel.selectIP(PeripheralsSelectionPanel.java:409)
+2026-01-29 17:11:36,847 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.pinoutconfig.guiV5.PeripheralsListListener.mouseClicked(PeripheralsListListener.java:103)
+2026-01-29 17:11:36,848 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.AWTEventMulticaster.mouseClicked(AWTEventMulticaster.java:278)
+2026-01-29 17:11:36,849 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6624)
+2026-01-29 17:11:36,850 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3398)
+2026-01-29 17:11:36,850 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Component.processEvent(Component.java:6386)
+2026-01-29 17:11:36,851 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+2026-01-29 17:11:36,852 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4996)
+2026-01-29 17:11:36,853 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+2026-01-29 17:11:36,854 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+2026-01-29 17:11:36,855 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
+2026-01-29 17:11:36,856 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4584)
+2026-01-29 17:11:36,857 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
+2026-01-29 17:11:36,858 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+2026-01-29 17:11:36,859 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+2026-01-29 17:11:36,860 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+2026-01-29 17:11:36,861 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+2026-01-29 17:11:36,862 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+2026-01-29 17:11:36,863 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+2026-01-29 17:11:36,864 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+2026-01-29 17:11:36,866 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:98)
+2026-01-29 17:11:36,866 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+2026-01-29 17:11:36,867 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+2026-01-29 17:11:36,868 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+2026-01-29 17:11:36,869 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+2026-01-29 17:11:36,870 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+2026-01-29 17:11:36,872 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+2026-01-29 17:11:36,873 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+2026-01-29 17:11:36,874 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+2026-01-29 17:11:36,875 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+2026-01-29 17:11:36,876 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+2026-01-29 17:11:36,877 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2026-01-29 17:11:59,757 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 893574008 Bytes (1073741824)
+2026-01-29 17:12:00,603 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 919433488 Bytes (1073741824)
+2026-01-29 17:12:02,143 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 992140152 Bytes (1073741824)
+2026-01-29 17:12:02,389 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 17:12:02,389 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 17:12:02,389 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 17:12:02,389 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 17:12:02,389 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 17:12:02,390 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2026-01-29 17:12:02,390 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2026-01-29 17:12:02,390 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2026-01-29 17:12:02,390 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2026-01-29 17:12:02,391 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2026-01-29 17:12:02,391 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-29 17:12:02,391 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-29 17:12:02,391 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-29 17:12:02,391 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2026-01-29 17:12:02,392 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 17:12:02,392 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2026-01-29 17:12:02,394 [INFO] CodeGenerator:882 - code generatio: config db path: C:/Users/ADMIN/.stm32cubemx/databases/DB.6.0.121/db/
+2026-01-29 17:12:02,395 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 17:12:02,396 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 17:12:02,397 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 17:12:02,397 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 17:12:02,398 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 17:12:02,398 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 17:12:02,398 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream2
+2026-01-29 17:12:02,398 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream2
+2026-01-29 17:12:02,398 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 17:12:02,398 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 17:12:02,398 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_7
+2026-01-29 17:12:02,399 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_7
+2026-01-29 17:12:02,399 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 17:12:02,399 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 17:12:02,399 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 17:12:02,399 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 17:12:02,399 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 17:12:02,399 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 17:12:02,399 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 17:12:02,399 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 17:12:02,399 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 17:12:02,399 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 17:12:02,399 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 17:12:02,399 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 17:12:02,399 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 17:12:02,399 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 17:12:02,399 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 17:12:02,399 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 17:12:02,399 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 17:12:02,399 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 17:12:02,400 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 17:12:02,401 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 17:12:02,401 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 17:12:02,401 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 17:12:02,428 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 17:12:02,428 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 17:12:02,428 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream2
+2026-01-29 17:12:02,428 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream2
+2026-01-29 17:12:02,428 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 17:12:02,428 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 17:12:02,428 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 17:12:02,428 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 17:12:02,428 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 17:12:02,428 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 17:12:02,428 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 17:12:02,428 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 17:12:02,428 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 17:12:02,429 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 17:12:02,430 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 17:12:02,430 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 17:12:02,430 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 17:12:02,430 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 17:12:02,430 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 17:12:02,430 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 17:12:02,430 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 17:12:02,430 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 17:12:02,430 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 17:12:02,432 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 17:12:02,432 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 17:12:02,432 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream5
+2026-01-29 17:12:02,432 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream5
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 17:12:02,433 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 17:12:02,433 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 17:12:02,433 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 17:12:02,433 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 17:12:02,433 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 17:12:02,433 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 17:12:02,433 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 17:12:02,433 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 17:12:02,433 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 17:12:02,433 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 17:12:02,433 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 17:12:02,433 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 17:12:02,434 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 17:12:02,517 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\license.tmp_save
+2026-01-29 17:12:02,802 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\license.tmp
+2026-01-29 17:12:02,856 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\gpio.tmp_save
+2026-01-29 17:12:03,011 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\gpio.tmp
+2026-01-29 17:12:04,478 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma.tmp_save
+2026-01-29 17:12:04,554 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma.tmp
+2026-01-29 17:12:04,557 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma_GV.tmp_save
+2026-01-29 17:12:04,610 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma_GV.tmp
+2026-01-29 17:12:04,627 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_it.c_save
+2026-01-29 17:12:04,835 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_it.c
+2026-01-29 17:12:04,841 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_it.h_save
+2026-01-29 17:12:04,919 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_it.h
+2026-01-29 17:12:04,945 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_hal_msp.c_save
+2026-01-29 17:12:05,102 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_hal_msp.c
+2026-01-29 17:12:05,107 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\system.tmp_save
+2026-01-29 17:12:05,163 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\system.tmp
+2026-01-29 17:12:05,173 [INFO] CodeEngine:319 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_hal_conf.h_save
+2026-01-29 17:12:05,239 [INFO] CodeEngine:343 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_hal_conf.h
+2026-01-29 17:12:05,268 [WARN] IPConfigManager:3790 - IP not found : TIM
+2026-01-29 17:12:05,269 [WARN] CodeGenerator:4198 - IP not found : null
+2026-01-29 17:12:05,279 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\main.h_save
+2026-01-29 17:12:05,374 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\main.h
+2026-01-29 17:12:05,380 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\main.c_save
+2026-01-29 17:12:05,557 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\main.c
+2026-01-29 17:12:05,973 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 187mS.
+2026-01-29 17:12:05,977 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2026-01-29 17:12:06,092 [INFO] ConfigFileManager:1590 - The Die is : DIE413
+2026-01-29 17:12:07,139 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1161mS.
+2026-01-29 17:12:07,139 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2026-01-29 17:12:07,142 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2026-01-29 18:02:34,421 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,422 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,422 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,423 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,425 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,425 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,426 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,426 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,591 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,591 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,592 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,592 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,595 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,595 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,596 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,596 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,768 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,769 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,769 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,770 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,774 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,774 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,775 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:02:34,775 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:09:46,452 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 809758312 Bytes (1073741824)
+2026-01-29 18:09:47,335 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 839975536 Bytes (1073741824)
+2026-01-29 18:09:49,009 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 953748080 Bytes (1073741824)
+2026-01-29 18:09:49,276 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:09:49,276 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:09:49,276 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:09:49,276 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:09:49,276 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:09:49,276 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2026-01-29 18:09:49,277 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2026-01-29 18:09:49,277 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2026-01-29 18:09:49,277 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2026-01-29 18:09:49,278 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2026-01-29 18:09:49,278 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-29 18:09:49,279 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-29 18:09:49,279 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-29 18:09:49,279 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2026-01-29 18:09:49,279 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:09:49,279 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:09:49,279 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2026-01-29 18:09:49,281 [INFO] CodeGenerator:882 - code generatio: config db path: C:/Users/ADMIN/.stm32cubemx/databases/DB.6.0.121/db/
+2026-01-29 18:09:49,283 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:09:49,284 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:09:49,284 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:09:49,284 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:09:49,286 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 18:09:49,286 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:09:49,286 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream2
+2026-01-29 18:09:49,286 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream2
+2026-01-29 18:09:49,286 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 18:09:49,287 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:09:49,287 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_7
+2026-01-29 18:09:49,287 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_7
+2026-01-29 18:09:49,287 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:09:49,287 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:09:49,287 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:09:49,287 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:09:49,287 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:09:49,287 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:09:49,287 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:09:49,287 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:09:49,287 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:09:49,287 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:09:49,287 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:09:49,287 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:09:49,287 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:09:49,287 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:09:49,287 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:09:49,288 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:09:49,288 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:09:49,288 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:09:49,288 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 18:09:49,288 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 18:09:49,288 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 18:09:49,288 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 18:09:49,289 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 18:09:49,319 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 18:09:49,319 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:09:49,319 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream2
+2026-01-29 18:09:49,319 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream2
+2026-01-29 18:09:49,319 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 18:09:49,319 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:09:49,319 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 18:09:49,319 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 18:09:49,319 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:09:49,319 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:09:49,319 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:09:49,319 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:09:49,319 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:09:49,319 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:09:49,321 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:09:49,321 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:09:49,321 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:09:49,321 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:09:49,321 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:09:49,321 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 18:09:49,321 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 18:09:49,321 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 18:09:49,321 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 18:09:49,321 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 18:09:49,321 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 18:09:49,322 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 18:09:49,323 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 18:09:49,323 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:09:49,323 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream5
+2026-01-29 18:09:49,323 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream5
+2026-01-29 18:09:49,323 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 18:09:49,323 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 18:09:49,324 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 18:09:49,326 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 18:09:49,326 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:09:49,326 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream1
+2026-01-29 18:09:49,326 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream1
+2026-01-29 18:09:49,326 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 18:09:49,326 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:09:49,326 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_5
+2026-01-29 18:09:49,326 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_5
+2026-01-29 18:09:49,326 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:09:49,326 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:09:49,326 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:09:49,326 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:09:49,326 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:09:49,326 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:09:49,326 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:09:49,326 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:09:49,326 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:09:49,326 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:09:49,327 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:09:49,327 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:09:49,327 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:09:49,327 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:09:49,327 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:09:49,327 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:09:49,327 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:09:49,327 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:09:49,327 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 18:09:49,328 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 18:09:49,403 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\license.tmp_save
+2026-01-29 18:09:49,833 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\license.tmp
+2026-01-29 18:09:49,902 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\gpio.tmp_save
+2026-01-29 18:09:50,126 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\gpio.tmp
+2026-01-29 18:09:51,812 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma.tmp_save
+2026-01-29 18:09:51,883 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma.tmp
+2026-01-29 18:09:51,888 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma_GV.tmp_save
+2026-01-29 18:09:51,961 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma_GV.tmp
+2026-01-29 18:09:51,988 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_it.c_save
+2026-01-29 18:09:52,239 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_it.c
+2026-01-29 18:09:52,246 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_it.h_save
+2026-01-29 18:09:52,313 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_it.h
+2026-01-29 18:09:52,331 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_hal_msp.c_save
+2026-01-29 18:09:52,537 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_hal_msp.c
+2026-01-29 18:09:52,544 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\system.tmp_save
+2026-01-29 18:09:52,618 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\system.tmp
+2026-01-29 18:09:52,638 [INFO] CodeEngine:319 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_hal_conf.h_save
+2026-01-29 18:09:52,723 [INFO] CodeEngine:343 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_hal_conf.h
+2026-01-29 18:09:52,766 [INFO] ApiDbMcu:508 - Load IP Config File for TIM9
+2026-01-29 18:09:52,769 [WARN] IPConfigManager:3790 - IP not found : TIM
+2026-01-29 18:09:52,770 [WARN] CodeGenerator:4198 - IP not found : null
+2026-01-29 18:09:52,779 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\main.h_save
+2026-01-29 18:09:52,868 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\main.h
+2026-01-29 18:09:52,878 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\main.c_save
+2026-01-29 18:09:53,098 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\main.c
+2026-01-29 18:09:53,561 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 209mS.
+2026-01-29 18:09:53,566 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2026-01-29 18:09:53,706 [INFO] ConfigFileManager:1590 - The Die is : DIE413
+2026-01-29 18:09:55,049 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1483mS.
+2026-01-29 18:09:55,050 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2026-01-29 18:09:55,052 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2026-01-29 18:29:01,730 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2026-01-29 18:29:05,138 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 748523760 Bytes (1073741824)
+2026-01-29 18:29:05,928 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 774215920 Bytes (1073741824)
+2026-01-29 18:29:08,181 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 903190768 Bytes (1073741824)
+2026-01-29 18:29:08,630 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:29:08,630 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:29:08,630 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:29:08,630 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:29:08,630 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:29:08,632 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2026-01-29 18:29:08,632 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2026-01-29 18:29:08,632 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2026-01-29 18:29:08,632 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2026-01-29 18:29:08,632 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2026-01-29 18:29:08,633 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-29 18:29:08,633 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-29 18:29:08,633 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2026-01-29 18:29:08,633 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2026-01-29 18:29:08,633 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:29:08,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8
+2026-01-29 18:29:08,634 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2026-01-29 18:29:08,635 [INFO] CodeGenerator:882 - code generatio: config db path: C:/Users/ADMIN/.stm32cubemx/databases/DB.6.0.121/db/
+2026-01-29 18:29:08,638 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:29:08,638 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:29:08,640 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2026-01-29 18:29:08,640 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2026-01-29 18:29:08,642 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 18:29:08,642 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:29:08,642 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream2
+2026-01-29 18:29:08,642 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream2
+2026-01-29 18:29:08,642 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 18:29:08,642 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:29:08,642 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_7
+2026-01-29 18:29:08,643 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_7
+2026-01-29 18:29:08,643 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:29:08,643 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:29:08,643 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:29:08,643 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:29:08,643 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 18:29:08,644 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:29:08,645 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:29:08,645 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:29:08,645 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:29:08,645 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:29:08,645 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:29:08,645 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:29:08,645 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:29:08,645 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 18:29:08,645 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 18:29:08,680 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 18:29:08,680 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:29:08,680 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream2
+2026-01-29 18:29:08,680 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream2
+2026-01-29 18:29:08,680 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:29:08,681 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:29:08,683 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:29:08,683 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:29:08,683 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:29:08,683 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:29:08,683 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 18:29:08,683 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 18:29:08,685 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 18:29:08,685 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:29:08,685 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream5
+2026-01-29 18:29:08,685 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream5
+2026-01-29 18:29:08,685 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 18:29:08,685 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:29:08,685 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 18:29:08,685 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2026-01-29 18:29:08,685 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:29:08,685 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:29:08,685 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:29:08,685 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:29:08,685 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:29:08,685 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:29:08,685 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:29:08,685 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:29:08,685 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:29:08,685 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:29:08,686 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:29:08,686 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:29:08,686 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:29:08,686 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:29:08,686 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:29:08,686 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:29:08,686 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:29:08,686 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:29:08,686 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 18:29:08,686 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 18:29:08,686 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 18:29:08,686 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 18:29:08,686 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 18:29:08,687 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 18:29:08,689 [INFO] Argument:325 - Argument : hdmavalue: null
+2026-01-29 18:29:08,689 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:29:08,689 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream1
+2026-01-29 18:29:08,689 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream1
+2026-01-29 18:29:08,689 [INFO] Argument:325 - Argument : Initvalue: null
+2026-01-29 18:29:08,689 [INFO] Argument:327 - 	 sub Args: 
+2026-01-29 18:29:08,689 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_5
+2026-01-29 18:29:08,689 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_5
+2026-01-29 18:29:08,689 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:29:08,689 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2026-01-29 18:29:08,689 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:29:08,689 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2026-01-29 18:29:08,689 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:29:08,689 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2026-01-29 18:29:08,689 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:29:08,689 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2026-01-29 18:29:08,689 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:29:08,689 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2026-01-29 18:29:08,689 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:29:08,689 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : Lockvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : Lockvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : Statevalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : Statevalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : Parentvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : Parentvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2026-01-29 18:29:08,690 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:29:08,691 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2026-01-29 18:29:08,691 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2026-01-29 18:29:08,691 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2026-01-29 18:29:08,788 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\license.tmp_save
+2026-01-29 18:29:09,244 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\license.tmp
+2026-01-29 18:29:09,327 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\gpio.tmp_save
+2026-01-29 18:29:09,526 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\gpio.tmp
+2026-01-29 18:29:11,450 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma.tmp_save
+2026-01-29 18:29:11,532 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma.tmp
+2026-01-29 18:29:11,536 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma_GV.tmp_save
+2026-01-29 18:29:11,606 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\dma_GV.tmp
+2026-01-29 18:29:11,632 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_it.c_save
+2026-01-29 18:29:11,824 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_it.c
+2026-01-29 18:29:11,831 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_it.h_save
+2026-01-29 18:29:11,916 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_it.h
+2026-01-29 18:29:11,943 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_hal_msp.c_save
+2026-01-29 18:29:12,112 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\stm32f4xx_hal_msp.c
+2026-01-29 18:29:12,119 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\system.tmp_save
+2026-01-29 18:29:12,200 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\MXTmpFiles\system.tmp
+2026-01-29 18:29:12,217 [INFO] CodeEngine:319 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_hal_conf.h_save
+2026-01-29 18:29:12,306 [INFO] CodeEngine:343 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\stm32f4xx_hal_conf.h
+2026-01-29 18:29:12,340 [WARN] IPConfigManager:3790 - IP not found : TIM
+2026-01-29 18:29:12,341 [WARN] CodeGenerator:4198 - IP not found : null
+2026-01-29 18:29:12,352 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\main.h_save
+2026-01-29 18:29:12,434 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Inc\main.h
+2026-01-29 18:29:12,441 [INFO] CodeEngine:263 - oldGeneratedFile, D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\main.c_save
+2026-01-29 18:29:12,620 [INFO] CodeEngine:287 - Generated code: D:\Mechatronics\Repositories\Project_Drone\firmware\firmware\drone\Drone_V1\Core\Src\main.c
+2026-01-29 18:29:12,956 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 165mS.
+2026-01-29 18:29:12,959 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2026-01-29 18:29:13,035 [INFO] ConfigFileManager:1590 - The Die is : DIE413
+2026-01-29 18:29:14,179 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1220mS.
+2026-01-29 18:29:14,180 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2026-01-29 18:29:14,182 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2026-01-29 21:08:59,850 [INFO] WebApp:194 - Connection lost
+2026-01-29 21:09:03,868 [INFO] WebApp:191 - Connection restablished
+2026-01-29 21:09:12,049 [INFO] WebApp:194 - Connection lost
+2026-01-29 21:09:12,307 [INFO] WebApp:191 - Connection restablished

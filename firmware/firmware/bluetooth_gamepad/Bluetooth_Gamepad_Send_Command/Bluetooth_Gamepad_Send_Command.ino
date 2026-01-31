@@ -22,7 +22,8 @@
 uint8_t face_button = 0;
 uint8_t shoulder_button = 0;
 uint8_t LEFT_X, LEFT_Y, RIGHT_X, RIGHT_Y;
-uint8_t buffer[6];
+uint8_t KP;
+uint8_t buffer[7];
 
 GamepadPtr myGamepad;
 
@@ -115,12 +116,14 @@ void ProcessGamepad(){
   }
 
   // Nút analog stick nhấn vào
-  if (myGamepad->thumbL()){
-    Serial.println("Left Stick pressed");
-  } 
+
   if (myGamepad->thumbR()){
+    shoulder_button |= (1<<4);
     Serial.println("Right Stick pressed");
   } 
+  else{
+    shoulder_button &= ~(1<<4);
+  }
 
   /* D_PAD BUTTONS */
   switch (myGamepad->dpad()) {
@@ -156,20 +159,31 @@ void ProcessGamepad(){
   int ry = myGamepad->axisRY();
   RIGHT_Y = map(ry, -512, 511, 255, 0);
 }
+
+char message[20];
+
 void loop() {
   BP32.update();
   if (myGamepad && myGamepad->isConnected()) {
     ProcessGamepad();
-
+    if(Serial.available() > 0){
+      int bytesRead = Serial.readBytesUntil('\n', message, sizeof(message)-1);
+      message[bytesRead] = '\0';
+      KP = atoi(message);
+      // float number_ = (float)converted_/100;
+      // Serial.println(number_);
+    }
+    
     buffer[0] = face_button;
     buffer[1] = shoulder_button;
     buffer[2] = LEFT_X;
     buffer[3] = LEFT_Y;
     buffer[4] = RIGHT_X;
     buffer[5] = RIGHT_Y;
+    buffer[6] = KP;
 
     // Send Command via UART
-    Serial1.write(buffer, 6);
+    Serial1.write(buffer, 7);
     delay(5);
   }
 }

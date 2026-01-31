@@ -20,8 +20,11 @@ typedef struct {
 	uint8_t LY;
 	uint8_t RX;
 	uint8_t RY;
+	uint8_t R_SELECT;
+	float KP;
 	uint8_t buffer[6];
 	UART_HandleTypeDef *huart;
+	uint8_t connection;
 } GAMEPAD;
 
 
